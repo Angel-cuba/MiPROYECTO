@@ -2,6 +2,9 @@ const router = require('express').Router()
 const dbConnection = require('../../database/db')
 
 const bcrypt = require('bcrypt')
+const jwt =require('jsonwebtoken')
+
+const {newUser} = require('../../controllers/user-controller')
 
 
 router.post('/login', async (req, res) => {
@@ -19,22 +22,17 @@ router.post('/login', async (req, res) => {
                })   
                 
            }else {
+               //  const hash = newUser.pass
                
                     if(results.length > 0) {
-                         const comparison = bcrypt.compare(pass, results[0].pass) 
+                         const comparison = bcrypt.compare(pass, results[0].pass)//bcrypt.hash(results[0].pass) //
                               const checkingEmail = results[0].email
-                         // if(email != checkingEmail){
-                         //                               res.send({            
-                         //                                    "code":206,            
-                         //                                    "error":"Email does not exist"              
-                         //                                    });  
-                         //                               }
-                         if(comparison){
-                              res.send({                
-                                   "code":200,                
-                                   "success":"login successful",
-                         })
-                          }
+
+                          
+                         // Aqui muestro datos que vienen desde la base de datos                         }
+                         // if(comparison){
+                         //      res.status(200).json("Hola "+ results[0].first_name + ' ' + results[0].last_name)
+                         //  }
                          
                  }                      
                
@@ -44,6 +42,19 @@ router.post('/login', async (req, res) => {
                                              }    
                          }
                })
+
+
+const token = jwt.sign(
+     {
+       email: req.body.email   
+     },
+          process.env.TOKEN_SECRET,
+          {expiresIn: '24h'}
+     )
+     res.header('auth-token', token).json({ 
+          error: null,
+          data: {token}
+     })
 })
 
 module.exports = router

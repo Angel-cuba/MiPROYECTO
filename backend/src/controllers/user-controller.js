@@ -9,15 +9,15 @@ userCtrl.newUser = async(req, res) => {
       const user = req.body
 
      //Encriptar el password
-     const encrypt = await bcrypt.genSalt(10)
-     const pass = await bcrypt.hash(req.body.pass, encrypt)
+     // const encrypt = await bcrypt.genSalt(10)
+     // const pass = await bcrypt.hashSync(req.body.pass, encrypt)
 
           // Objeto de nuevo usuario, se iguala [pass(encriptada):pass]
           const newUser ={
               first_name:user.first_name,
                last_name: user.last_name,
               email: user.email,
-              pass: pass}
+              pass: user.pass}
           
      // Checking empty fields
      if (!user.first_name || !user.last_name || !user.email ||!user.pass) {
@@ -34,8 +34,9 @@ userCtrl.newUser = async(req, res) => {
     dbConnection.query(sqlQuery, [newUser.first_name, newUser.last_name, newUser.email, newUser.pass], (err, result) => {
          if(err) throw err
 
-         res.status(201).json('User inside database '+ result)
+         res.status(201).json({"message":"User inside DB", result: result})
     })
+
 }
 
 userCtrl.updateUser = (req, res) => {
@@ -45,5 +46,6 @@ userCtrl.updateUser = (req, res) => {
 userCtrl.deleteUser = (req, res) => {
      res.json('Delete User')
 }
+
 
 module.exports = userCtrl;
