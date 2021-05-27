@@ -21,7 +21,7 @@ dbConnection.connect((error) => {
             console.error('Database connection was refused.');
         }
     } else {
-        console.log('Database is already----->', dbConnection.state);
+        console.log('Database is already---->', dbConnection.state);
      //    console.log('Database connected',dbConnection);
 
     }

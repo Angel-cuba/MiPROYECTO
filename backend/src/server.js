@@ -4,16 +4,16 @@ const app = require('./app')
 require('./database/db')
 
 //* Setting port
-const port = process.env.DB_PORT;
+// const port = 3000;
 
 // function to activate server
 async function server(){
           //Starting server from here
-        try {
+      
              await app.listen(app.get('port'))
-        console.log(`Server running on port ${port}`)
-        } catch (error) {
-             console.log(error)
-        }
+             console.log('server listening on--->', app.get('port'))
+
+
+
 }
 server()
