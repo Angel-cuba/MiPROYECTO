@@ -19,7 +19,7 @@ userCtrl.newUser = async(req, res) => {
               email: user.email,
               pass: pass}
           
-     ////////////////////////////////  
+     // Checking empty fields
      if (!user.first_name || !user.last_name || !user.email ||!user.pass) {
         return res.json({
             ErrorCode: 204,
