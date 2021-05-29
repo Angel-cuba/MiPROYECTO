@@ -13,11 +13,13 @@ userCtrl.newUser = async(req, res) => {
  const hashpass = await bcrypt.hashSync(req.body.pass, encrypt)
 
           // Objeto de nuevo usuario, se iguala [pass(encriptada):pass]
+          let datetime = new Date();
           const newUser ={
               first_name:user.first_name,
                last_name: user.last_name,
               email: user.email,
-              pass: hashpass}
+              pass: hashpass,
+              }
           
      // Checking empty fields
      if (!user.first_name || !user.last_name || !user.email ||!user.pass) {
@@ -26,18 +28,17 @@ userCtrl.newUser = async(req, res) => {
             Message: 'Fields cannot be empty'
         });
     }
+    // Constant to save time 
+  const created_at = new Date(Date.now());
     
-          //Query
-      let sqlQuery = 'INSERT INTO users(first_name, last_name, email, pass) VALUES (?,?,?,?)'
+    //Query
+    let sqlQuery = `INSERT INTO users(first_name, last_name, email, pass,created_at)  VALUES (?,?,?,?, ?)`//
 
-
-    dbConnection.query(sqlQuery, [newUser.first_name, newUser.last_name, newUser.email, newUser.pass], (err, result) => {
+    dbConnection.query(sqlQuery, [newUser.first_name, newUser.last_name, newUser.email, newUser.pass, created_at], (err, result) => {
          if(err) throw err
-         
-      
+             
          res.status(201).json({"message":"User inside DB", result: result})
     })
-
 }
 
 userCtrl.updateUser = (req, res) => {
