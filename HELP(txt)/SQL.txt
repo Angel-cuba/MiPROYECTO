@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS tasks (
     description TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )  ENGINE=INNODB;
+
 ----------------------------------------------------
 *******************************************
 CREATE TABLE IF NOT EXISTS task ( 
@@ -28,3 +29,41 @@ CREATE TABLE IF NOT EXISTS task (
 		FOREIGN KEY (id) 
 		REFERENCES users (id) 
 		ON DELETE CASCADE ) 
+
+----------------------------------------------------------------
+***************************************************
+CREATE DATABASE db_comments;
+
+USE db_comments;
+
+CREATE TABLE comments (
+        id INT(11) NOT NULL,
+        user_name VARCHAR(16) NOT NULL,
+        password VARCHAR(60) NOT NULL,
+        full_name VARCHAR(100) NOT NULL
+);
+
+ALTER TABLE comments
+        ADD PRIMARY KEY (id);
+
+ALTER TABLE comments
+        MODIFY id INT(11) NOT NULL AUTO_INCREMENT = 2;
+
+DESCRIBE comments;
+************************************************************
+************************************************************
+/////Links TABLE_NAME
+CREATE TABLE links (
+    id INT(11) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    url VARCHAR(255) NOT NULL,
+    description TEXT, 
+    comments_id INT(11),
+    created_at timestamp NOT NULL DEFAULT current_timestamp,
+    CONSTRAINT fk_comment FOREIGN KEY (comments_id) REFERENCES comments (id)
+);
+
+ALTER TABLE links ADD PRIMARY KEY (id);
+
+ALTER TABLE links 
+        MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 2;
