@@ -4,7 +4,6 @@ const dbConnection = require('../database/db')
 const bcrypt = require('bcrypt')
 
 userCtrl.newUser = async(req, res) => {
-
      //Recojo los datos del user
       const user = req.body
 

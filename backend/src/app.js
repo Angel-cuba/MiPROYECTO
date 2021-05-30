@@ -29,6 +29,7 @@ const authUser = require('./routes/Validate/authUser')
 //Routes of Login and Register
 app.use('/api/user', authUser)
 app.use('/api/user', require('./routes/user'));
+app.use('/comments', require('./routes/comments'))
 
 //// app.listen( port, () => {
 //     console.log(`Server running in port ${port}`);
