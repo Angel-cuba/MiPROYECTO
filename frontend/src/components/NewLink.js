@@ -1,19 +1,17 @@
 const NewLinks = () => {
 
 
-
-
      return (
           <>
             <div className="container p-4">
-                    <div class="col-md-4  mx-auto">
-                         <div class="card ">
-                              <div class="card-body">
-                                   <form action="http://localhost:3000/comments/add" method="POST">
-                                        <div class="form-group">
-                                             <input type="text" className="form-control" name="title" placeholder="Title" autofocus />
+                    <div className="col-md-4  mx-auto">
+                         <div className="card ">
+                              <div className="card-body">
+                                   <form action="http://localhost:4000/comments/add" method="POST">
+                                        <div className="form-group">
+                                             <input type="text" className="form-control" name="title" placeholder="Title" autoFocus />
                                              </div>
-                                             <div class="form-group">
+                                             <div className="form-group">
                                                   <input type="text" className="form-control" name="url" placeholder="Url"/>
                                              </div>
                                              <div class="form-group">

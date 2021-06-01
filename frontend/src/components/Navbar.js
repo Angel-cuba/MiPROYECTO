@@ -2,15 +2,15 @@ const NavBar = () => {
 
      return (
           <>
-          <nav class="navbar navbar-expand-lg bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+          <nav className="navbar navbar-expand-lg bg-dark">
+  <a className="navnavbar-brand" href="#">Navbar</a>
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a clasName="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+  <div className="navbarcollapse navbar-collapse" id="navbarNav">
+    <ul className="nav navbar-nav">
+      <li className="nav-item active">
+        <a className="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li className="nav-item">
         <a className="nav-link" href="#">Features</a>
@@ -19,7 +19,7 @@ const NavBar = () => {
         <a className="nav-link" href="#">Pricing</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
       </li>
     </ul>
   </div>
