@@ -36,6 +36,39 @@
     transform: rotate(360deg);
   }
 }
+.MyLinks{
+  /* width:fit-content; */
+  /* display: flex; */
+ 
+ background-color: rgba(226, 214, 214, 0.244);
+
+}
 .classCard{
-  width: 60%;
+  width: 300px;
+  margin: 1em; 
+  height: 300px;
+padding: .4rem;
+}
+
+.button{
+  width:120px;
+  /* background-color: #61dafb; */
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.all{
+  display: flex;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+
+}
+span{
+  background-color: rgba(8, 226, 226, 0.267);
+  padding: 0.5em;
+  margin: auto;
+  border :2px solid rgba(8, 226, 226, 0.267);
+  /* border */
+  border-radius : 50% 20%/10% 30%;
 }

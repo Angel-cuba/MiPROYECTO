@@ -9,7 +9,7 @@ require('dotenv').config()
 
 //app.set('port',process.env.DB_PORT )
 //PORT 
-app.set('port',process.env.PORT || 3000)
+app.set('port',process.env.PORT || 4000)
 
 
 

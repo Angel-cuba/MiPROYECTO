@@ -14,10 +14,10 @@ const NewLinks = () => {
                                              <div className="form-group">
                                                   <input type="text" className="form-control" name="url" placeholder="Url"/>
                                              </div>
-                                             <div class="form-group">
+                                             <div className="form-group">
                                                   <textarea name="description"  className="form-control"  id="" rows="2" placeholder="Description"/>
                                              </div>
-                                           <div class="form-group">
+                                           <div className="form-group">
                                                 <button className="btn btn-success btn-block">Save</button>
                                            </div>
                                    </form>

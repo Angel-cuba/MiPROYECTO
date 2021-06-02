@@ -3,11 +3,12 @@ import MyLinks from './MyLinks'
 
 
 
+
 const All = () => {
    const [ dataCards, setdataCards ] = useState([])
 
 
-  useEffect(() => Links(setdataCards),[])
+  useEffect( () => Links(setdataCards),[])
 
   let cards 
   if (dataCards.length) {
@@ -20,12 +21,17 @@ const All = () => {
              description = {card.description}
 
             />
+                         
+
        ))
   }
 
 return (
      <>
-     {cards}
+     <div className="all">
+           {cards ? cards : <span>No hay cards..............</span>}   
+     </div>
+ 
 
      </>
 )
