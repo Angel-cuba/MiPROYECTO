@@ -67,17 +67,17 @@ commentCtrl.deleteComment = async (req, res) => {
     }
 
     let sqlQuery = "DELETE FROM links WHERE id = ?"
-    try {
-            await dbConnection.query(sqlQuery,[id] ,(err)=> {
+//     try {
+            await dbConnection.query(sqlQuery,[id] ,(err, result)=> {
          if (err) throw err
-         res.status(200).json(`Comment deleted with id= ${id}`)
+     //     res.status(200).json(`Comment deleted with id= ${id}`)
+     res.redirect('http://localhost:3000/')
           
     }) 
-    } catch (error) {
-         throw new Error
-     
-    }
+//     } catch (error) {
+//          throw new Error
 
+//     }
 
 //    redirect('http://localhost:3000/')   
 }
