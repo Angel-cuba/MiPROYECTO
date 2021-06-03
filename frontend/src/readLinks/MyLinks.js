@@ -1,16 +1,16 @@
-// import Button from '../Small-Components/button'
+import ButtonDelete from '../Small-Components/button'
 
 const MyLinks = (card) => {
      // {id, title, url, description}
-      const deleted =async (id)=> {
-         await fetch(`http://localhost:4000/comments/delete/${id}`,{
-              method: "DELETE",
-         })
-          // console.log(e.target)
-          // , {
-          //      method: "DELETE",
-          // }
-     }          
+     //  const deleted =async (id)=> {
+     //     await fetch(`http://localhost:4000/comments/delete/${id}`,{
+     //          method: "DELETE",
+     //     })
+     //      // console.log(e.target)
+     //      // , {
+     //      //      method: "DELETE",
+     //      // }
+     // }          
 
      return (
           <>
@@ -23,10 +23,9 @@ const MyLinks = (card) => {
                     {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
                     </div>
                     <div className="button">
-                           {/* <a href={`http://localhost:4000/comments/${card.id}`}                            className="btn-block btn-warning">Useeee</a> */}
-                               {/* <Button key={id}/> */}
-                               <button onClick={()=>deleted(card.id)} className="btn btn-danger">Borrar</button>
-                    <a className="btn btn-success btn-sm">Edit</a>
+                        
+                               <ButtonDelete id={card.id}/>
+                    <button className="btn btn-success btn-sm">Edit</button>
                     </div>
                    
                </div>
