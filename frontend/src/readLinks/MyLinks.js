@@ -1,4 +1,6 @@
 import ButtonDelete from '../Small-Components/button'
+import * as timeago from 'timeago.js'
+
 
 const MyLinks = (card) => {
      // {id, title, url, description}
@@ -11,6 +13,8 @@ const MyLinks = (card) => {
      //      //      method: "DELETE",
      //      // }
      // }          
+  const mytimeago = timeago.format(`${card.created_at}`);
+ //  timeago.render(document.querySelectorAll('.demo'))
 
      return (
           <>
@@ -22,9 +26,15 @@ const MyLinks = (card) => {
                     <p className="card-text">{card.description}</p>
                     {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
                     </div>
+                    {/* <div className="created_at">
+                         <h2>{card.created_at}</h2>
+                    </div> */}
+                    <div className="mytimeago">
+                         {mytimeago}
+                    </div>
+
                     <div className="button">
-                        
-                               <ButtonDelete id={card.id}/>
+                              <ButtonDelete id={card.id}/>
                     <button className="btn btn-success btn-sm">Edit</button>
                     </div>
                    

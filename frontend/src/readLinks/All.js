@@ -6,9 +6,10 @@ import MyLinks from './MyLinks'
 
 const All = () => {
    const [ dataCards, setdataCards ] = useState([])
-
+       //testing timeago
 
   useEffect( () => Links(setdataCards),[])
+
 
   let cards 
   if (dataCards.length) {
@@ -19,6 +20,7 @@ const All = () => {
              title={card.title}
              url={card.url}
              description = {card.description}
+          created_at={card.created_at}
 
             />
                          
