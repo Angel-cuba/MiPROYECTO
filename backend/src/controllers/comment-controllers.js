@@ -11,6 +11,20 @@ commentCtrl.readComments = async(req, res) => {
      })
 }
 
+commentCtrl.getByIdComment = async (req, res) => {
+     const {id} = req.params;
+     let sqlQuery = `SELECT * FROM links WHERE id = ${id}`
+
+        if (isNaN(id)) {
+        return res.json('You must enter a valid id as a parameter');
+    }
+
+    await dbConnection.query(sqlQuery, [id], (err, result) => {
+         if (err) throw err
+         res.status(200).json(result)
+    })
+}
+
 commentCtrl.newComment= async (req, res) => {
      const comments = req.body
 
@@ -20,9 +34,12 @@ commentCtrl.newComment= async (req, res) => {
           description: comments.description
      }
 
-     let sqlQuery =`INSERT INTO links (title,url, description) VALUE (?,?,?)`
+       // Constant to save time 
+  const created_at = new Date(Date.now());
 
-   await dbConnection.query(sqlQuery, [newComment.title, newComment.url, newComment.description], (err, result) => {
+     let sqlQuery =`INSERT INTO links (title,url, description, created_at) VALUE (?,?,?,?)`
+
+   await dbConnection.query(sqlQuery, [newComment.title, newComment.url, newComment.description, created_at], (err, result) => {
           if (err) throw err
           res.redirect('http://localhost:3000/')
      })
@@ -37,7 +54,6 @@ commentCtrl.updateComment = async (req, res) => {
         title,
        url, 
        description }
-        
 
 
         if (isNaN(id)) {
@@ -83,7 +99,6 @@ commentCtrl.deleteComment = async (req, res) => {
     }) 
 //     } catch (error) {
 //          throw new Error
-
 //     }
 
 //    redirect('http://localhost:3000/')   

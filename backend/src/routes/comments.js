@@ -1,14 +1,15 @@
 const router = require('express').Router()
 
 
-const { newComment, readComments,  updateComment, deleteComment} = require('../controllers/comment-controllers')
+const { newComment, getByIdComment, readComments,  updateComment, deleteComment} = require('../controllers/comment-controllers')
 
 //All methods to check
 router.get('/read', readComments)
-// router.get('/add', newComment )
+
 router.post('/add', newComment )
 
 //by :id
+router.get('/:id', getByIdComment )
 router.put('/update/:id', updateComment)
 // router.get('/delete/:id', deleteComment)
 
