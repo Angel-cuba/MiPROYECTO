@@ -29,27 +29,34 @@ commentCtrl.newComment= async (req, res) => {
 }
 
 
-commentCtrl.updateComment = (req, res) => {
+commentCtrl.updateComment = async (req, res) => {
      const id = parseInt(req.params.id)
-     const { ComingComment } = req.body
-     const ToupdateComment=[
-        title= ComingComment.title,
-        url = ComingComment.url, 
-        description  = ComingComment.description
-        ]
+     const { title, url, description } = req.body
      
+      const ToupdateComment={
+        title,
+       url, 
+       description }
+        
+
+
         if (isNaN(id)) {
         return res.json('You must enter a valid id as a parameter')
     }
-    if(!ComingComment.title || !ComingComment.url || !ComingComment.description){
+    if(!title || !url || !description){
          return res.json({
               ErrorCode: 204,
               message: "Fields can't be empty!"
          })
     }
-    let sqlQuery = `UPDATE links SET (title,url, description) VALUES (?,?,?) WHERE id ${id}`
+
+
+    let sqlQuery = `UPDATE links SET ? WHERE id= ${id}`
+
+
+
 //title=,url=,description=
-    dbConnection.query(sqlQuery, [ToupdateComment.title, ToupdateComment.url, ToupdateComment.description], (err, result) => {
+  await dbConnection.query(sqlQuery, [ToupdateComment, id], (err, result) => {
          if (err) throw err
          if(result.affectedRow === 0){
               res.send('Ooops, something was wrong')
