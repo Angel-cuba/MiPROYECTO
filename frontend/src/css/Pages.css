@@ -1,0 +1,8 @@
+.pages {
+      display: flex;
+      justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: rgba(45, 88, 80, 0.383);
+        width :auto;
+}
