@@ -1,12 +1,18 @@
+import { useState } from 'react'
 import ButtonDelete from '../Small-Components/ButtonDelete'
 import ButtonEdit from '../Small-Components/ButtonEdit'
 import * as timeago from 'timeago.js'
 
 
-const MyLinks = (card) => {
-     
+const oneById = (card) => {
   const mytimeago = timeago.format(`${card.created_at}`);
- //  timeago.render(document.querySelectorAll('.demo'))
+
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          const [ oneData, setoneData ] = useState([])
+
+if(oneData){
+
+}
 
      return (
           <>
@@ -33,12 +39,14 @@ const MyLinks = (card) => {
                    
                </div>
            </div>
-               
-
           </>
      )
 }
 
+const Link = async (setoneData) => {
+     const response = await fetch(`http://localhost:4000/comments/:id`)
+     const data = await response.json()
+     setoneData(data)
+}
 
-
-export default MyLinks
+export default oneById
