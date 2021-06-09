@@ -48,6 +48,20 @@ export const LoginBtnLink = styled(Link)`
     color: #808080;
   }
 `;
+export const HomeBtn = styled(Link)`
+background-color: rgba(0,0,0,.5);
+padding: .8rem;
+font-size: 900;
+border-radius: 4px;
+&:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #808080;
+text-decoration:none;
+
+  }
+`;
+
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
@@ -73,5 +87,6 @@ export const NavBtn = styled.nav`
   //   display: none;
   // }
 `;
+
 
 // export default  (NavLink, Nav, LoginBtnLink) 

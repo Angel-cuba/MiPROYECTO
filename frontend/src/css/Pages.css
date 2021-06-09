@@ -3,6 +3,9 @@
       justify-content: center;
         align-items: center;
         height: 100vh;
-        color: rgba(45, 88, 80, 0.383);
+        color: rgba(174, 209, 16, 0.924);
         width :auto;
+}
+.home{
+  height: 100vh;
 }
