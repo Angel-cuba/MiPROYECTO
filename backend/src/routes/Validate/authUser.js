@@ -14,19 +14,20 @@ router.post("/login", async (req, res) => {
       res.send({
         code: 400,
         failed: "error occurred",
-        err: error,
+        err: err
       });
     } else {
-      if (results.length) {
+      if (results.length>0) {
         const encryptedPasswordFromDB = results[0].pass;
         const plainTextPasswordFromBody = req.body.pass;
 
-        const didPasswordMatch = bcrypt.compareSync(plainTextPasswordFromBody, encryptedPasswordFromDB); // Aquí he cambiado el === por bcrypt.compare()
+        const didPasswordMatch = bcrypt.compareSync(plainTextPasswordFromBody, encryptedPasswordFromDB); // Aquí he cambiado el == por bcrypt.compare()
 
         if (!didPasswordMatch) { 
                     res.send({
         code: 400,
         failed: "error occurred",
+        message: "Wrong password, but remember to check the email too",
         err: "error",
       });
         }else{
@@ -39,13 +40,18 @@ router.post("/login", async (req, res) => {
           );
           res.header("auth-token", token).json({
             error: null,
-            data: { token },
+            data: token ,
             message:
               "Hola " + results[0].first_name + " " + results[0].last_name,
           });
         }
       } else {
-        res.status(403).json("Email or password incorrect");
+        res.send({
+        code: 403,
+        failed: "error occurred",
+        message: "Email not found and be carefull with password",
+        err: "error",
+      });
       }
     }
   });
