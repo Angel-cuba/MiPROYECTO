@@ -6,12 +6,8 @@ const morgan = require('morgan')
 const app = express()
 require('dotenv').config()
 
-
-//app.set('port',process.env.DB_PORT )
 //PORT 
 app.set('port',process.env.PORT || 4000)
-
-
 
 app.use(morgan('combined'))
 
@@ -31,8 +27,5 @@ app.use('/api/user', authUser)
 app.use('/api/user', require('./routes/user'));
 app.use('/comments', require('./routes/comments'))
 
-//// app.listen( port, () => {
-//     console.log(`Server running in port ${port}`);
-// });
 
 module.exports = app;
