@@ -11,10 +11,10 @@ router.post("/login", async (req, res) => {
   let sqlQuery = "SELECT * FROM users WHERE email = ?"; // Aquí te he quitado el where password
 
   dbConnection.query(sqlQuery, [email, pass], (err, results) => { 
-    if (err) {
+    if (!req.body.email || !req.body.pass) {
       res.send({
         code: 400, 
-        failed: "error occurred",
+        message: "Fields can't be empty",
         err: err
       });  
     } else {
@@ -27,7 +27,7 @@ router.post("/login", async (req, res) => {
         if (!didPasswordMatch) { 
                     res.send({
         code: 400,
-        failed: "error occurred",
+        failed: "error occurred in password field",
         message: "Wrong password, but remember to check the email too",
         err: "error",
       });
@@ -45,11 +45,11 @@ router.post("/login", async (req, res) => {
             results
               });
         }
-       }
+       }   
        else {
         res.send({
         code: 403,
-        failed: "error occurred",
+        failed: "error occurred from email side",
         message: "Email not found and be carefull with password",
         err: "error",
       });
