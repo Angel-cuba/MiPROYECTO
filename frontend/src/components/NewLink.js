@@ -1,4 +1,7 @@
-const NewLinks = () => {
+import  React from 'react'
+
+
+export const NewLinks = () => {
 
 
      return (
@@ -32,4 +35,4 @@ const NewLinks = () => {
 
 }
 
-export default NewLinks
+

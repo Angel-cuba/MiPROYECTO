@@ -1,7 +1,7 @@
 
 const Signup = () => {
     return (
-          <div class="pages">
+          <div className="pages">
           <h1>
                Login side
           </h1>

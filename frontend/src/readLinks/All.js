@@ -4,7 +4,7 @@ import MyLinks from './MyLinks'
 
 
 
-const All = () => {
+export const All = () => {
    const [ dataCards, setdataCards ] = useState([])
        //testing timeago
 
@@ -47,4 +47,3 @@ const Links = async(setdataCards) => {
 }
 
 
-export default All
