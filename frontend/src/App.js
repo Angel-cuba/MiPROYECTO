@@ -15,7 +15,14 @@ import EachUser from './components/pages/EachUser'
 
  
 function App() {
-const [ auth, setAuth] = useState()
+const [ auth, setAuth] = useState(
+   localStorage.getItem("userJWT")
+               ? 
+               { jwt: localStorage.getItem("userJWT") }
+               :   
+               undefined 
+)
+
 
   return (
     <>
@@ -26,27 +33,18 @@ const [ auth, setAuth] = useState()
     <Switch>  
        
       
-      <Route path="/Login">
-        {auth ? (
-           <>
-         {/* <NewLinks/>
-         <All/>  */}
-         
-           <EachUser />
-      
-               
-           </>):
-            ( 
-            <Login />
-           )}
-      
-        
+      <Route path="/login">
+
+        {auth ? <EachUser/> : <Login/>}
+    
       </Route>
-      <Route path="/Blog"> <Blog /></Route>
-      <Route path="/Team"><Team /></Route>
-      <Route path="/SignUp"><Signup /> </Route>
-      <Route path="/About"><About/> </Route>
-      <Route path="/"><Home/></Route>
+      <Route path="/blog"> <Blog /></Route>
+      <Route path="/team"><Team /></Route>
+      <Route path="/signUp"><Signup /> </Route>
+      <Route path="/about"><About/> </Route>
+      <Route path="/eachUser"><About/> </Route>
+
+      <Route path="/" exact><Home/></Route>
    
 
     </Switch>

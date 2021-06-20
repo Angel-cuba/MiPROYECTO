@@ -6,6 +6,8 @@ import { useState, useEffect, useContext} from 'react'
 import Axios from 'axios'
 import { AuthContext } from '../lib/auth.context'
 import EachUser from './EachUser'
+import NewLinks from '../NewLink'
+import All from '../../readLinks/All'
 
 
 
@@ -25,16 +27,6 @@ import EachUser from './EachUser'
 
 
 
-  useEffect(() => {
-if(LoggedUser){
-const loggedInUser = localStorage.getItem('user');
-    if (loggedInUser) {
-      const foundUser = JSON.parse(loggedInUser);
-      setLoggedUser(foundUser.results[0]);
-    }
-}
-    
-  }, [LoggedUser]);
 
 
 const login = (e,setAuth, history) => {
@@ -44,45 +36,30 @@ const login = (e,setAuth, history) => {
      email: userEmail,
      pass: userPassword
   
-   }).then(response =>{
-       if(response.data){
-         
-              console.log('test', response)
-           localStorage.setItem('user', JSON.stringify(response));
-                 // localStorage.setItem('user', response);
-
+   })
+   .then(response =>{
+       if(response.data.token){
+               console.log('test', response)
+           localStorage.setItem('userJWT', JSON.stringify(response.data));
               setAuth(response.data.token)
-              setLoggedUser(response.data)
+              // console.log(setAuth)
+              setLoggedUser(response.data.userDB)
+              console.log('user_name',response.data.userDB[0].first_name)
 
-              history.push('/eachUser')
+              history.push('/')
        }
    }).catch(( error )=> {
      setError(error)
-  
+       console.log('este es el error : ', error)
    })
+
  } 
+
+ 
 
 
  return (
-     <>
- {LoggedUser ? (
-      <div>
-       {LoggedUser.first_name} is logged in
-       <h1>desde</h1>
-
-        {/* <Redirect to="eachUser"> */}
-                 <EachUser/>
-             {/* </Redirect> */}
-
-       
-
-       {/* <h1>hola {LoggedUser.first_name}</h1>
-        <button onClick={logout}> Logout</button>  */}
-      </div>
-
- ) : (
             <>
-
    <div className="login">
       <h1>Login Page</h1>
       <label>Username</label>
@@ -107,9 +84,7 @@ const login = (e,setAuth, history) => {
     
     </>
 
- 
- )}
- </>
+
      )
 }
 
