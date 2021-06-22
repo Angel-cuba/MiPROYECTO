@@ -48,6 +48,27 @@ export const LoginBtnLink = styled(Link)`
     color: #808080;
   }
 `;
+export const LogOutBtnLink = styled(Link)`
+  border-radius: 4px;
+  background: #ff5e62;
+  font-weight: 900;
+  margin: auto;
+  padding: 7px 20px;
+  color: #d39d38;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  /* Second Nav */
+  margin-left: 24px;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #808080;
+  }
+`;
+
 export const HomeBtn = styled(Link)`
 background-color: rgba(0,0,0,.5);
 padding: .8rem;
