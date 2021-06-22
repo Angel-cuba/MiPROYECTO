@@ -1,51 +1,32 @@
-import {React, useEffect, useState} from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useEffect, useContext } from 'react'
 import { NewLinks } from '../NewLink'
 import { All } from '../../readLinks/All'
-import Axios from 'axios'
+
+import {  useLocation } from 'react-router-dom'
+
+import {AuthContext} from '../lib/auth.context'
 
 
  const EachUser = () => {
-        const history = useHistory()
- const [ LoggedUser, setLoggedUser] = useState("")
 
-useEffect(() =>
- {
-const user = localStorage.getItem('userJWT')
-    if(user) {
-         
-}},
- [])
+ const {auth} = useContext(AuthContext)
+ const location = useLocation()
+ const saludo = location.state
 
- const logout = () => {
-   localStorage.clear()
-   history.push('/')
-   window.location.reload()
-   }
-
-
-
-
-
+      
+useEffect(() => { },[])
 
      return (
-          <>
-         
-                <h1>Cada user viene aqui</h1>
-       {LoggedUser} is logged in tttt
-
-                         
-                         <NewLinks/>
-                              <All />
-                    
-                         
-                         <button onClick={logout}>
-                              Logout
-                              </button>
-             
-          
+        <>
+          <h1>Cada user viene aqui</h1>
             
-                  
+             <h1>
+                {saludo} 
+             </h1>
+             <h2>{ auth.first_name } { auth.last_name }</h2>
+               <NewLinks/>
+                <All /> 
+                       
           </>
      )
 }
