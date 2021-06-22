@@ -1,10 +1,11 @@
-import React from 'react'
-import { Nav, NavMenu, NavLink, NavBtn, HomeBtn , LoginBtnLink } from './NavbarElements'
-
+import React, {useContext} from 'react'
+import { Nav, NavMenu, NavLink, NavBtn, HomeBtn , LoginBtnLink, LogOutBtnLink } from './NavbarElements'
+import { AuthContext } from '../lib/auth.context'
 
 
 
 const NavBar = () => {
+  const authContext = useContext(AuthContext)
 
      return (
           <>
@@ -21,9 +22,22 @@ const NavBar = () => {
               {/* <NavLink to='/Login' activeClassName="activeLink">Login</NavLink> */}
               
               </NavMenu> 
-              <NavBtn>
+
+              {!authContext.auth  ? 
+              (
+                 <NavBtn>
                 <LoginBtnLink to='/Login' activeClassName="activeLink">Log In</LoginBtnLink>
               </NavBtn>
+              )
+               :
+                ( 
+                  <NavBtn>
+                   <LogOutBtnLink to='/' activeClassName="activeLink">Log out</LogOutBtnLink>
+                  </NavBtn>
+              )
+              
+              }
+             
 
 
           </Nav>
