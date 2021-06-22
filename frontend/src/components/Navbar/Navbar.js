@@ -1,11 +1,22 @@
 import React, {useContext} from 'react'
 import { Nav, NavMenu, NavLink, NavBtn, HomeBtn , LoginBtnLink, LogOutBtnLink } from './NavbarElements'
 import { AuthContext } from '../lib/auth.context'
+import { useHistory} from 'react-router-dom'
+
 
 
 
 const NavBar = () => {
   const authContext = useContext(AuthContext)
+        const history = useHistory()
+
+      const logout = () => {
+   localStorage.clear()
+   history.push('/login')
+   window.location.reload()
+   }
+
+
 
      return (
           <>
@@ -32,7 +43,7 @@ const NavBar = () => {
                :
                 ( 
                   <NavBtn>
-                   <LogOutBtnLink to='/' activeClassName="activeLink">Log out</LogOutBtnLink>
+                   <LogOutBtnLink to='/' activeClassName="activeLink" onClick={logout}>Log out</LogOutBtnLink>
                   </NavBtn>
               )
               
