@@ -1,6 +1,6 @@
 const router = require('express').Router()
 
-const { newUser, updateUser, deleteUser } = require('../controllers/user-controller')
+const { newUser, updateUser, deleteUser, getOneUser } = require('../controllers/user-controller')
 
 //Aqui hago el REGISTER mediante el método POST
  router.post('/register', newUser)
@@ -9,8 +9,8 @@ const { newUser, updateUser, deleteUser } = require('../controllers/user-control
 
 //Controlar mediante el id
 //http://localhost:3000/api/user/id
-// router.route('/:id')
-router.put('/update', updateUser)
-router.delete('/delete', deleteUser)
+router.get('/:id', getOneUser)
+router.put('/update/:id', updateUser)
+router.delete('/delete/:id', deleteUser)
 
 module.exports = router

@@ -12,7 +12,7 @@ commentCtrl.readComments = async(req, res) => {
 }
 
 commentCtrl.getByIdComment = async (req, res) => {
-     const {id} = req.params;
+     const { id } = req.params;
      let sqlQuery = `SELECT * FROM links WHERE id = ${id}`
 
         if (isNaN(id)) {
@@ -54,8 +54,7 @@ commentCtrl.updateComment = async (req, res) => {
         title,
        url, 
        description }
-
-
+       
         if (isNaN(id)) {
         return res.json('You must enter a valid id as a parameter')
     }
@@ -65,13 +64,8 @@ commentCtrl.updateComment = async (req, res) => {
               message: "Fields can't be empty!"
          })
     }
-
-
     let sqlQuery = `UPDATE links SET ? WHERE id= ${id}`
 
-
-
-//title=,url=,description=
   await dbConnection.query(sqlQuery, [ToupdateComment, id], (err, result) => {
          if (err) throw err
          if(result.affectedRow === 0){
@@ -93,15 +87,10 @@ commentCtrl.deleteComment = async (req, res) => {
 //     try {
             await dbConnection.query(sqlQuery,[id] ,(err, result)=> {
          if (err) throw err
-     //     res.status(200).json(`Comment deleted with id= ${id}`)
-     res.redirect('http://localhost:3000/')
+        res.status(200).json(`Comment deleted with id= ${id}`)
+     //res.redirect('http://localhost:3000/')
           
     }) 
-//     } catch (error) {
-//          throw new Error
-//     }
-
-//    redirect('http://localhost:3000/')   
 }
 
 

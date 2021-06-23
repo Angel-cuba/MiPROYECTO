@@ -41,8 +41,8 @@ router.post("/login", async (req, res) => {
             { expiresIn: "24h" }
           );
           res.header("auth-token", token).json({
-            token: token ,
-            results
+            userDB: results,
+            token
               });
         }
        }   

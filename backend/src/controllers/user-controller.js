@@ -40,6 +40,20 @@ userCtrl.newUser = async(req, res) => {
     })
 }
 
+userCtrl.getOneUser = async (req, res) => {
+     const { id } = req.params
+     let sqlQuery = `SELECT * FROM users WHERE id = ${id}`
+
+      if (isNaN(id)) {
+        return res.json('You must enter a valid id as a parameter');
+    }
+
+    await dbConnection.query(sqlQuery, [id], (err, result) => {
+         if (err) throw err
+         res.status(200).json(result)
+    })
+}
+
 userCtrl.updateUser = (req, res) => {
      res.json('Update')
 }
