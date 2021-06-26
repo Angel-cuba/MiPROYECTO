@@ -21,23 +21,17 @@ export const All = () => {
              url={card.url}
              description = {card.description}
           created_at={card.created_at}
-
             />
-                         
-
        ))
   }
 
-return (
-     <>
-     <div className="all">
-           {cards ? cards : <span>No hay cards..............</span>}   
-     </div>
- 
-
-     </>
-)
-
+     return (
+          <>
+               <div className="all">
+                    {cards ? cards : <span>Sorry, there are sever problems..............</span>}   
+               </div>
+          </>
+     )
 
 }
 const Links = async(setdataCards) => {
@@ -45,5 +39,6 @@ const Links = async(setdataCards) => {
      const data = await response.json()
      setdataCards(data)
 }
+
 
 

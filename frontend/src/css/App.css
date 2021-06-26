@@ -1,7 +1,7 @@
 
 *{
   /* background-color:rgba(28, 8, 119, 0.904); */
-  background-color: #0868d4c0; 
+  background-color: rgba(15, 191, 245, 0.164); 
  /* background-image: linear-gradient(315deg, #100d25 50%, #775858 74%);  */
 }
 .App {
@@ -17,34 +17,42 @@
   }
 }
 .MyLinks{
-  /* width:fit-content; */
-  /* display: flex; */
- 
- background-color: rgba(26, 9, 9, 0.244);
+ background-color: rgba(15, 12, 12, 0.061);
+ width:fit-content;
+border-radius: 9px;
+margin: auto;
 
 }
 .classCard{
+  background-color:rgba(45, 73, 44, 0.246);
   width: 300px;
   margin: 1em; 
   height: fit-content;
-padding: .4rem;
+  padding: .4rem;
+}
+.classCard .card-header{
+  text-align: center;
+}
+.card-body{
+  text-align: center;
 }
 
 .button{
   width:120px;
-  /* background-color: #61dafb; */
   margin: 1rem auto;
   display: flex;
   justify-content: space-between;
- background-color: rgba(226, 214, 214, 0.244);
+ background-color: transparent;
 
 }
 .all{
+  background-color: transparent;
   display: flex;
-  width: 90%;
+  width: fit-content;
   margin: auto;
   flex-wrap: wrap;
-
+  font-family: Elephant;
+  /* font-weight: 900; */
 }
 span{
   background-color: rgba(8, 226, 226, 0.267);
