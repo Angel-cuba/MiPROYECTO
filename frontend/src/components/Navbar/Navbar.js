@@ -1,8 +1,8 @@
 import React, {useContext} from 'react'
-import { Nav, NavMenu, NavLink, NavBtn, HomeBtn , LoginBtnLink, LogOutBtnLink } from './NavbarElements'
+import { Nav, NavMenu, NavLink, NavBtn, HomeBtn , LoginBtnLink, LogOutBtnLink, ImgBtn } from './NavbarElements'
 import { AuthContext } from '../lib/auth.context'
 import { useHistory} from 'react-router-dom'
-
+import  UserButton  from '../../Small-Components/UserButton'
 
 
 
@@ -15,10 +15,7 @@ const NavBar = () => {
    history.push('/login')
    window.location.reload()
    }
-
-
-
-     return (
+  return (
           <>
           <Nav>
             <NavMenu>
@@ -30,8 +27,23 @@ const NavBar = () => {
                 <NavLink to='/Signup'activeClassName="activeLink">Sign Up</NavLink>
                 <NavLink to='/Team'activeClassName="activeLink">Team</NavLink>
 
-              {/* <NavLink to='/Login' activeClassName="activeLink">Login</NavLink> */}
-              
+                {!authContext.auth ?
+                           ( 
+                  <>
+                  </>
+                        )
+                      :
+                       (
+                      <>
+                  <NavLink to='/eachUser'>
+                            <UserButton/>
+                                
+                      </NavLink>
+                              </>
+                          )                
+                
+                }
+
               </NavMenu> 
 
               {!authContext.auth  ? 
@@ -46,10 +58,7 @@ const NavBar = () => {
                    <LogOutBtnLink to='/' activeClassName="activeLink" onClick={logout}>Log out</LogOutBtnLink>
                   </NavBtn>
               )
-              
-              }
-             
-
+               }
 
           </Nav>
       
