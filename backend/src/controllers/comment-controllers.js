@@ -41,11 +41,11 @@ commentCtrl.newComment= async (req, res) => {
 
    await dbConnection.query(sqlQuery, [newComment.title, newComment.url, newComment.description, created_at], (err, result) => {
           if (err) throw err
-          res.redirect('http://localhost:3000/')
+          res.status(200).json(result)
      })
 }
 
-
+ 
 commentCtrl.updateComment = async (req, res) => {
      const id = parseInt(req.params.id)
      const { title, url, description } = req.body
@@ -87,7 +87,7 @@ commentCtrl.deleteComment = async (req, res) => {
 //     try {
             await dbConnection.query(sqlQuery,[id] ,(err, result)=> {
          if (err) throw err
-        res.status(200).json(`Comment deleted with id= ${id}`)
+        res.status(200).json(result)
      //res.redirect('http://localhost:3000/')
           
     }) 
