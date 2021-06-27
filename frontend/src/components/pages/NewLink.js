@@ -1,7 +1,7 @@
 import  React, { useState } from 'react'
 import { useHistory} from 'react-router-dom'
 
-import './pagesCss/newlink.css'
+import './css/newlink.css'
 
 
 
@@ -37,7 +37,7 @@ export const NewLinks = () => {
           <>
             <div className="form">
                  <div className="form_card">
-                      <h1>New Link</h1>
+                      <h2>New Link</h2>
                       <div className="title">
                                    <label>Title</label>
                               <input
