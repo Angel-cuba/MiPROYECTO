@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { Nav, NavMenu, NavLink, NavBtn, HomeBtn , LoginBtnLink, LogOutBtnLink, ImgBtn } from './NavbarElements'
+import { Nav, NavMenu, NavLink, NavBtn, HomeBtn , LoginBtnLink, LogOutBtnLink } from './NavbarElements'
 import { AuthContext } from '../lib/auth.context'
 import { useHistory} from 'react-router-dom'
 import  UserButton  from '../../Small-Components/UserButton'
@@ -24,7 +24,7 @@ const NavBar = () => {
                 <NavLink to='/About' activeClassName="activeLink">About</NavLink>
                 
                 <NavLink to='/Blog' activeClassName="activeLink">Blog</NavLink>
-                <NavLink to='/Signup'activeClassName="activeLink">Sign Up</NavLink>
+                <NavLink to='/Register'activeClassName="activeLink">Register</NavLink>
                 <NavLink to='/Team'activeClassName="activeLink">Team</NavLink>
 
                 {!authContext.auth ?
