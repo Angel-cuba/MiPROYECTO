@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+#variables de colores
+variables.scss
+
 # testing
 /coverage
 

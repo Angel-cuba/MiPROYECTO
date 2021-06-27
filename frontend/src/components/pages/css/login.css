@@ -1,0 +1,120 @@
+.activeLink {
+  color: #bb5757;
+}
+
+.login_page {
+  width: 100%;
+  height: calc(100vh - 85.4px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.login {
+  background-color: rgba(12, 14, 15, 0.829);
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  padding: 7em 1em;
+  border-radius: 13px;
+  text-align: center;
+}
+
+.login h1 {
+  background-color: transparent;
+  margin: auto;
+  padding-bottom: 0.2rem;
+}
+
+.login:hover {
+  color: red;
+  font-weight: 700;
+}
+
+.login .register_side {
+  background-color: transparent;
+  text-align: center;
+}
+
+.login .register_side h3 {
+  background-color: rgba(173, 216, 230, 0.0159389);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  border-radius: 5px;
+}
+
+label {
+  margin: auto;
+  background-color: transparent;
+  color: #f86a0cd0;
+}
+
+.email,
+.password {
+  background-color: transparent;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: auto;
+}
+
+.btn_login {
+  background-color: #008080;
+  color: #F0FFF0;
+  margin: 1rem auto;
+  padding: 0.5rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.btn_login:hover {
+  background-color: #005050;
+  color: #808000;
+  font-weight: 600;
+}
+
+input {
+  background-color: rgba(238, 223, 223, 0.384);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  padding: 0.5rem;
+}
+
+input:focus {
+  color: #3b2929;
+}
+
+input::-webkit-input-placeholder {
+  color: #c3bcbc;
+}
+
+input:-ms-input-placeholder {
+  color: #c3bcbc;
+}
+
+input::-ms-input-placeholder {
+  color: #c3bcbc;
+}
+
+input::placeholder {
+  color: #c3bcbc;
+}
+/*# sourceMappingURL=login.css.map */

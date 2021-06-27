@@ -1,10 +1,10 @@
 import React from 'react'
 import { useHistory} from 'react-router-dom'
-import './pagesCss/pages.css';
+import './css/login.css';
 import { useState, useContext} from 'react'
-// import {Route,  Redirect } from 'react-router-dom'
 import Axios from 'axios'
 import { AuthContext } from '../lib/auth.context'
+import { NavLink } from '../../components/Navbar/NavbarElements'
 
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
@@ -36,7 +36,7 @@ const login = (e,setAuth) => {
        if(response.data.token){
               // console.log('test', response)
                 const toastFx = () => {
-                        toast.success(`Hello ${response.data.userDB[0].first_name} is good to see ya `)
+                        toast.success(`Hello  ${response.data.userDB[0].first_name} is good to see ya `)
                                  }
            localStorage.setItem('jwt', JSON.stringify(response.data.token));
               setAuth(response.data.token)
@@ -76,6 +76,16 @@ const login = (e,setAuth) => {
       </div>
       
       <button className="btn_login" onClick={(e) =>{login(e, setAuthContext.setAuth)}}> Login </button>
+      <div className="register_side">
+         <h3>Do you have an account?</h3>
+            
+            <NavLink to="/register">
+              Register here
+            </NavLink>
+      </div>
+        
+
+         
     </div>
             </div>
       

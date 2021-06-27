@@ -6,7 +6,7 @@ import './css/Pages.css'
 import Login from './components/pages/Login'
 import Blog from './components/pages/Blog'
 import Team from './components/pages/Team'
-import Signup from './components/pages/Signup'
+import Register from './components/pages/Register'
 import About from './components/pages/About'
 import Home from './components/pages/Home'
 import { AuthContext } from './components/lib/auth.context'
@@ -43,7 +43,7 @@ useEffect(() => {
 
       <Route path="/blog"> <Blog /></Route>
       <Route path="/team"><Team /></Route>
-      <Route path="/signUp"><Signup /> </Route>
+      <Route path="/register"><Register /> </Route>
       <Route path="/about"><About/> </Route>
       <Route path="/eachUser"><EachUser/> </Route>
       <Route path="/" exact><Home/></Route>

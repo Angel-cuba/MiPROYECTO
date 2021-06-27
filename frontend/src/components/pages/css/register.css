@@ -1,0 +1,87 @@
+.pages {
+  width: 90%;
+  background-color: transparent;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pages .register {
+  background-color: #2F4F4F;
+  width: 70%;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  border-radius: 15px;
+  -webkit-box-shadow: #696969 1px 1px 1px 0px, #778899 1.4px 1.4px 1.5px 0px inset, 0.5px 1px 1px 0.2px #A9A9A9;
+          box-shadow: #696969 1px 1px 1px 0px, #778899 1.4px 1.4px 1.5px 0px inset, 0.5px 1px 1px 0.2px #A9A9A9;
+}
+
+.pages .register h1 {
+  text-align: center;
+  color: #02b875;
+  background-color: transparent;
+}
+
+.pages .register .register_btn {
+  background-color: #008080;
+  color: #F0FFF0;
+  margin: 1rem auto;
+  padding: 0.5rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.pages .register .register_btn:hover {
+  background-color: #005050;
+  color: #808000;
+  font-weight: 600;
+}
+
+.pages .register_firstname,
+.pages .register_lastname,
+.pages .register_email,
+.pages .register_password {
+  background-color: transparent;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.pages .register_firstname input,
+.pages .register_lastname input,
+.pages .register_email input,
+.pages .register_password input {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.pages .register_firstname label,
+.pages .register_lastname label,
+.pages .register_email label,
+.pages .register_password label {
+  font-weight: 200;
+  font-size: 18px;
+  font-family: Elephant;
+  letter-spacing: 2px;
+}
+/*# sourceMappingURL=register.css.map */

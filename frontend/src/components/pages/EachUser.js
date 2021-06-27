@@ -1,7 +1,7 @@
 import React from 'react'
 import { NewLinks } from './NewLink'
 import { All } from '../../readLinks/All'
-import './pagesCss/pages.css'
+import './css/eachUser.css'
 
 
 
@@ -14,6 +14,7 @@ import './pagesCss/pages.css'
         
                <NewLinks />
                 <All /> 
+     
                     </div>
 
           </div>

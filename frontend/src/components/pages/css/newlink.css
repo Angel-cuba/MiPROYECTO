@@ -1,0 +1,98 @@
+.form {
+  background-color: rgba(226, 237, 238, 0.431);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  width: 90vw;
+  margin: 2em auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 7em 1em;
+  border-radius: 9px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 7px 50px -27px, 0px 10px 40px 16px rgba(0, 0, 0, 0.6);
+          box-shadow: rgba(0, 0, 0, 0.8) 0px 7px 50px -27px, 0px 10px 40px 16px rgba(0, 0, 0, 0.6);
+}
+
+.form .form_card {
+  background-color: transparent;
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.1rem 4em;
+  border-radius: 5px;
+  border: 1.3px solid rgba(17, 17, 17, 0.1138);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0px 7px 5px -7px, 1px 1px 4px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: rgba(0, 0, 0, 0.7) 0px 7px 5px -7px, 1px 1px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form .form_card h2 {
+  font-family: Elephant;
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  padding-bottom: 0.2rem;
+}
+
+.form .form_card input {
+  margin: 1em auto;
+}
+
+.form .form_card input::-webkit-input-placeholder {
+  color: black;
+  background-color: transparent;
+}
+
+.form .form_card input:-ms-input-placeholder {
+  color: black;
+  background-color: transparent;
+}
+
+.form .form_card input::-ms-input-placeholder {
+  color: black;
+  background-color: transparent;
+}
+
+.form .form_card input::placeholder {
+  color: black;
+  background-color: transparent;
+}
+
+.form .form_card label {
+  background-color: rgba(45, 49, 63, 0.068);
+  padding: 0.37em 1em;
+  border-radius: 4.6px;
+  color: #0f0b0b;
+  font-weight: 700;
+}
+
+.title,
+.url,
+.description {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.btn_add {
+  background-color: #2F4F4F;
+  color: rgba(0, 0, 0, 0.2);
+  margin: 1rem auto;
+  padding: 0.5rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.btn_add:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #FFFAFA;
+  font-weight: 600;
+}
+/*# sourceMappingURL=newlink.css.map */

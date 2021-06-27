@@ -1,0 +1,78 @@
+@import "../css/VariableScss/variables.scss";
+@import "../css/VariableScss/mixin.scss";
+
+
+.activeLink {
+	color: #bb5757;
+}
+.login_page {
+	width: 100%;
+	height: calc(100vh - 85.4px);
+	display: flex;
+}
+.login {
+	background-color: rgba(12, 14, 15, 0.829);
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	padding: 7em 1em;
+	border-radius: 13px;
+     text-align: center;
+          h1 {
+               background-color: transparent;
+               margin: auto;
+               padding-bottom: 0.2rem;
+              
+               }
+      &:hover{
+                    color: red;
+                    font-weight:700
+               }      
+     .register_side{
+          background-color: transparent;
+          text-align: center;
+          h3{
+               background-color: rgba(173, 216, 230, 0.0159389);
+               width: fit-content;
+               margin: auto;
+               border-radius: 5px;
+		
+          }
+		
+     }    
+}
+
+label {
+	margin: auto;
+	background-color: transparent;
+	color: #f86a0cd0;
+}
+
+.email,
+.password {
+	background-color: transparent;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin: auto;
+}
+.btn_login {
+	@include button_login_regiter();
+	
+}
+input {
+	background-color: rgba(238, 223, 223, 0.384);
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	height: 40px;
+	padding: 0.5rem;
+     &:focus{
+          color: rgb(59, 41, 41);
+     }
+     &::placeholder{
+          color: rgb(195, 188, 188);
+     }
+}
