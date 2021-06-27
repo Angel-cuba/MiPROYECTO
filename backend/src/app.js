@@ -2,6 +2,11 @@ const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
 
+
+//middleware
+const auth = require('./routes/middleware/auth')
+
+
 //Start
 const app = express()
 require('dotenv').config()
@@ -21,6 +26,14 @@ app.use(morgan('combined'))
 //     res.setHeader('Acces-Contorl-Allow-Methods','Content-Type','Authorization');
 //     next(); 
 // })
+module.exports = function(app) {
+  app.use(function(req, res, next) {
+    res.header(
+      "Access-Control-Allow-Headers",
+      "x-access-token, Origin, Content-Type, Accept"
+    );
+    next();
+  });}
 let options = {
      origin: 'http://localhost:3000',
      method: 'POST, GET, PUT, DELETE',
@@ -29,6 +42,7 @@ let options = {
 app.use(cors());
 app.use( express.json());
 app.use( express.urlencoded( { extended: false } ) );
+
  
 //Routes to validate new users
 const authUser = require('./routes/Validate/authUser')
@@ -36,6 +50,7 @@ const authUser = require('./routes/Validate/authUser')
 //Routes of Login and Register
 app.use('/api/user', authUser)
 app.use('/api/user', require('./routes/user'));
-app.use('/comments', cors(), require('./routes/comments'))
+app.use('/comments',  require('./routes/comments'))
+
 
 module.exports = app;

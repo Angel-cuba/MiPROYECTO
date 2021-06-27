@@ -2,6 +2,7 @@ const router = require('express').Router();
 const dbConnection = require("../../database/db");
 
 
+
 const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
 
@@ -40,6 +41,15 @@ router.post("/login", async (req, res) => {
             userDB: results,
             token
               });
+  //**** *///comentarios de cada usuario//******** */
+//    commentCtrl.readComments = async(req, res) => {
+//      let sqlQuery = 'SELECT * FROM links WHERE user_id = ?'
+
+//      await dbConnection.query(sqlQuery, [req.body.id], (err,results) => {
+//           if (err) throw err
+//           res.status(200).json(results)
+//      })
+// }
         }
        }   
        else {

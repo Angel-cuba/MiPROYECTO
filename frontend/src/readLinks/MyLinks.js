@@ -12,15 +12,15 @@ const MyLinks = (card) => {
           <>
            <div className="MyLinks">
                 <div className="card classCard">
-                    <h5 className="card-header">{card.title}</h5>
+                   
                     <div className="card-body">
-                    <h5 className="card-title">{card.url}</h5>
+                    <a href={card.url} target="_blank" rel="noopener noreferrer">
+                          <h5 className="card-header">{card.title}</h5>
+                    </a>
                     <p className="card-text">{card.description}</p>
-                    {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
+                    
                     </div>
-                    {/* <div className="created_at">
-                         <h2>{card.created_at}</h2>
-                    </div> */}
+                  
                     <div className="mytimeago">
                          {mytimeago}
                     </div>
@@ -28,8 +28,7 @@ const MyLinks = (card) => {
                     <div className="button">
                               <ButtonDelete id={card.id}/>
                               <ButtonEdit id={card.id}/>
-                    {/* <button className="btn btn-success btn-sm">Edit</button> */}
-                    </div>
+                      </div>
                    
                </div>
            </div>
