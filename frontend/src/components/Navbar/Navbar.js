@@ -24,7 +24,7 @@ const NavBar = () => {
                 <NavLink to='/About' activeClassName="activeLink">About</NavLink>
                 
                 <NavLink to='/Blog' activeClassName="activeLink">Blog</NavLink>
-                <NavLink to='/Register'activeClassName="activeLink">Register</NavLink>
+                {/* <NavLink to='/Register'activeClassName="activeLink">Register</NavLink> */}
                 <NavLink to='/Team'activeClassName="activeLink">Team</NavLink>
 
                 {!authContext.auth ?
