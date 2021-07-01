@@ -26,20 +26,21 @@ commentCtrl.getByIdComment = async (req, res) => {
 }
 
 commentCtrl.newComment= async (req, res) => {
-     const comments = req.body
+     const { title, url, description} = req.body
 
      const newComment = {
-          title: comments.title,
-          url: comments.url,
-          description: comments.description
+          title,
+          url,
+          description,
+          user_id: req.user.id
      }
 
        // Constant to save time 
   const created_at = new Date(Date.now());
 
-     let sqlQuery =`INSERT INTO links (title,url, description, created_at) VALUE (?,?,?,?)`
+     let sqlQuery =`INSERT INTO links SET ?`
 
-   await dbConnection.query(sqlQuery, [newComment.title, newComment.url, newComment.description, created_at], (err, result) => {
+   await dbConnection.query(sqlQuery, [newComment, created_at], (err, result) => {
           if (err) throw err
           res.status(200).json(result)
      })
@@ -88,7 +89,6 @@ commentCtrl.deleteComment = async (req, res) => {
             await dbConnection.query(sqlQuery,[id] ,(err, result)=> {
          if (err) throw err
         res.status(200).json(result)
-     //res.redirect('http://localhost:3000/')
           
     }) 
 }
