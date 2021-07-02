@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 import '../pages/css/register.css'
 import { useHistory } from 'react-router-dom'
 
-
+//Usando Formik
+import {  Formik, Form } from 'formik'
+//Usando el input
+import { Input } from '../../Small-Components/Input'
 
 
 const Signup = () => {
@@ -45,18 +48,83 @@ setEmail("")
 setPassword("")
 
 }
-
-
+// const first = (e) => {setFirstname(e.target.value)}
 
     return (
-          <div className="pages">
+         <Formik 
+     //     initialValues= {{
+     //          firstname: '',
+     //          lastname: '',
+     //          email: '',
+     //          password: '',
+     //          repeatPassword: ''
+     //     }}
+         >
+              {/* {formik => ( */}
+                     <div className="pages">
+              {/* {console.log(formik)} */}
          
-          <div className="register">
+          <Form className="register">
                 <h1>
                Register side
-          </h1>
-                 <div className="register_firstname">
-                 <label>Your first name</label>
+                  </h1>
+             
+                <Input 
+                    className= 'register_side'
+                    label="First name" 
+                    name="firstname" 
+                    placeholder="Write your first name"
+                    onChange={(e) => {setFirstname(e.target.value)}}
+                              /> 
+               <Input 
+                    className= 'register_side'
+                    label="Last name" 
+                    name="lastname" 
+                    placeholder="Write your last name"
+                    onChange={(e) => {setLastname(e.target.value)}}
+                              />
+               <Input 
+                   type='email'
+                    className= 'register_side'
+                    label="Email" 
+                    name="email" 
+                    placeholder="Give your email address"
+                    onChange={(e) => {setEmail(e.target.value)}}
+                              />
+                              
+                <Input 
+                    type="password"
+                    className= 'register_side'
+                    label="Password" 
+                    name="password" 
+                    placeholder="Guess a password"
+                    onChange={(e) => setPassword(e.target.value)}
+                              />
+               <Input 
+               type="password"
+                    className= 'register_side'
+                    label="Repeat your password" 
+                    name="repeatPassword" 
+                    placeholder="Plzzz repeat it..!!!"
+                    onChange={(e) => e.target.value}
+                              /> 
+        
+               <button className="register_btn" onClick={(e) => {register(e)}}>Send your info</button>
+          </Form>
+        
+          
+     </div>
+              {/* )}
+         */}
+     </Formik>
+    )
+}
+
+export default Signup;
+
+
+     {/* <div className="register_firstname">
+                <label>Your first name</label>
                <input 
                type="text"
                id="firstname"
@@ -94,13 +162,14 @@ setPassword("")
                onChange={(e) => {setPassword(e.target.value)}}
                autoFocus
                />
-          </div>
-               <button className="register_btn" onClick={(e) => {register(e)}}>Send your info</button>
-          </div>
-        
-          
-     </div>
-    )
-}
-
-export default Signup;
+          </div> */}
+          {/* <div className="register_password">
+               <label>Checking password</label>
+               <input 
+               type="text"
+               id="password"
+               placeholder="Repeat Password"
+               onChange={(e) => {setPassword(e.target.value)}}
+               autoFocus
+               />
+          </div> */}
