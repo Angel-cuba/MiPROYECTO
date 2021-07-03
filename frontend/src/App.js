@@ -1,5 +1,5 @@
 import NavBar from './components/Navbar/Navbar';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './css/App.css'
 import './css/Pages.css'
@@ -12,7 +12,7 @@ import Home from './components/pages/Home'
 import { AuthContext } from './components/lib/auth.context'
 import EachUser from './components/pages/EachUser'
 
-import Axios from 'axios'
+// import Axios from 'axios'
 // import { response } from '../../backend/src/app';
  
 function App() {
@@ -24,9 +24,9 @@ const [ auth, setAuth] = useState(
                   undefined 
 )
 
-useEffect(() => {
-    if(localStorage.getItem("jwt")) recoverUser(setAuth)
-}, [])
+// useEffect(() => {
+//     if(localStorage.getItem("jwt")) recoverUser(setAuth)
+// }, [])
 
   return (
     <>
@@ -55,26 +55,26 @@ useEffect(() => {
    </>
   );
 }
-const recoverUser= async (auth, setAuth) => {
-  //  const id = auth.user.id
-  await Axios.get(`http://localhost:4000/api/user/data`, {
-        headers: {
-             "Content-Type": "application/json",
-          "Authorization": 'Bearer' + localStorage.getItem("jwt")
-        }
-    }) 
-    .then(response =>{
-          if(response){
-            console.log(response)
-            setAuth({
-              ...auth, 
-              // token: localStorage.getItem("jwt"),
-              user: {first_name: response.authorized.first_name}})
-            }
-         }
-    ) 
-    .catch((error) => console.log(error))
+// const recoverUser= async (auth, setAuth) => {
+//   //  const id = auth.user.id
+//   await Axios.get('http://localhost:4000/api/user/data', {
+//         headers: {
+//              "Content-Type": "application/json",
+//           "Authorization": 'Bearer' + localStorage.getItem("jwt")
+//         }
+//     }) 
+//     .then(response =>{
+//           if(response){
+//             console.log(response)
+//             setAuth({
+//               ...auth, 
+//               // token: localStorage.getItem("jwt"),
+//               user: {first_name: response.authorized.first_name}})
+//             }
+//          }
+//     ) 
+//     .catch((error) => console.log(error))
     
-}
+// }
 
 export default App;

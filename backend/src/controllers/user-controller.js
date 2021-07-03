@@ -2,7 +2,7 @@ const userCtrl = {}
 const dbConnection = require('../database/db')
 
 const bcrypt = require('bcrypt')
-
+   
 userCtrl.newUser = async(req, res) => {
      //Recojo los datos del user
       const { first_name,last_name, email, pass } = req.body
@@ -19,7 +19,7 @@ userCtrl.newUser = async(req, res) => {
                email,
                pass: hashpass
               }
-              
+ 
           
      // Checking empty fields
      if (!first_name || !last_name || !email ||!pass) {

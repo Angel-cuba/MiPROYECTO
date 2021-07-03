@@ -24,8 +24,8 @@
           flex-direction: column;
   margin: auto;
   border-radius: 15px;
-  -webkit-box-shadow: #696969 1px 1px 1px 0px, #778899 1.4px 1.4px 1.5px 0px inset, 0.5px 1px 1px 0.2px #A9A9A9;
-          box-shadow: #696969 1px 1px 1px 0px, #778899 1.4px 1.4px 1.5px 0px inset, 0.5px 1px 1px 0.2px #A9A9A9;
+  -webkit-box-shadow: #696969 2px 1px 1px 0px, #778899 1.4px 1.4px 1.5px 0px inset, 0.5px 1px 1px 0.2px #A9A9A9;
+          box-shadow: #696969 2px 1px 1px 0px, #778899 1.4px 1.4px 1.5px 0px inset, 0.5px 1px 1px 0.2px #A9A9A9;
 }
 
 .pages .register h1 {
@@ -38,7 +38,7 @@
   background-color: #008080;
   color: #F0FFF0;
   margin: 1rem auto;
-  padding: 0.5rem 2rem;
+  padding: 1.3rem 2rem;
   border: none;
   outline: none;
   border-radius: 5px;
@@ -83,5 +83,72 @@
   font-size: 18px;
   font-family: Elephant;
   letter-spacing: 2px;
+}
+
+.out-input {
+  background-color: transparent;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.out-input .register_side {
+  background-color: #556B2F;
+  width: 70%;
+  color: #D3D3D3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+.out-input input,
+.out-input input[type='email'],
+.out-input input[type='password'] {
+  width: 50%;
+  margin: 1rem auto;
+  background-color: #808000;
+  color: #f7f4f4;
+}
+
+.out-input label {
+  font-weight: 500;
+  font-size: 18px;
+  font-family: Elephant;
+  letter-spacing: 2px;
+  color: #00FF7F;
+}
+
+.errorMessage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  background-color: transparent;
+  padding: 6px;
+  color: #FF0000;
+  font-size: 22px;
+}
+
+.errorMessage .icon {
+  background-color: transparent;
+  height: 2.5vmin;
+  width: 2.5vmin;
+  color: #FF0000;
+  margin-left: 5px;
 }
 /*# sourceMappingURL=register.css.map */

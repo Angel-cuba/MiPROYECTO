@@ -11,9 +11,9 @@ router.post('/add', newComment )
 //by :id
 router.get('/edit/:id', getByIdComment )
 router.put('/update/:id', updateComment)
-// router.get('/delete/:id', deleteComment)
+router.delete('/delete/:id', deleteComment)
 
-router.delete('/:id', deleteComment)
+// router.delete('/:id', deleteComment)
 
 
 module.exports = router

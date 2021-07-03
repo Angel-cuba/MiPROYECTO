@@ -1,51 +1,110 @@
-@import '../css/VariableScss/variables.scss';
-@import '../css/VariableScss/mixin.scss';
+@import '../pagesCss/VariableScss/variables.scss';
+@import '../pagesCss/VariableScss/mixin.scss';
 
-.pages{
-     width: 90%;
-     background-color: transparent;
-     margin: 0 auto;
+.pages {
+	width: 90%;
+	background-color: transparent;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+
+	.register {
+		background-color: $clr-gray-darkslate;
+		width: 70%;
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		margin: auto;
+		border-radius: 15px;
+		box-shadow: $clr-gray-dim 2px 1px 1px 0px, $clr-gray-lightslate 1.4px 1.4px 1.5px 0px inset,
+			0.5px 1px 1px 0.2px $clr-gray-dark;
+		h1 {
+			text-align: center;
+			color: $medium;
+			background-color: transparent;
+		}
+		.register_btn {
+			@include button_login_regiter();
+		}
+	}
+	.register_firstname,
+	.register_lastname,
+	.register_email,
+	.register_password{
+	     background-color: transparent;
+	     width : 100%;
+	     display: flex;
+	     flex-direction: column;
+	     margin: 1rem auto;
+	     padding: 1rem;
+	     input{
+	          width:50%;
+	          margin: 0 auto;
+	     }
+	     label{
+	          font-weight: 200;
+	          font-size: 18px;
+	          font-family: Elephant;
+	          letter-spacing: 2px;
+               
+	     }
+	}
+}
+
+.out-input {
+	background-color: transparent;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	// margin: 3rem auto;
+	// padding: 1rem;
+	// outline : none;
+	// border: none;
+	.register_side {
+		 background-color: $clr-olive-dark;
+		width: 70%;
+          color: $clr-gray-light;
+		// padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		margin: auto;
+		border-radius: 8px;
+          font-size: 20px;
+	}
+	input,
+	input[type='email'],
+	input[type='password'] {
+		width: 50%;
+		margin: 1rem auto;
+		background-color: $clr-olive;
+		color: rgb(247, 244, 244);
+		// &::placeholder {
+		// 	  //   color: $clr-light-m-2;
+          //  background-color: red;
+		// }
+	}
+	label {
+		font-weight: 500;
+		font-size: 18px;
+		font-family: Elephant;
+		letter-spacing: 2px;
+		color: $clr-springgreen;
+	}
+}
+.errorMessage{
      display: flex;
-     flex-direction: column;
-   
-     .register{
-          background-color: $clr-gray-darkslate;
-          width: 70%;
-          padding: 1rem;
-          display: flex;
-          flex-direction: column;
-          margin: auto;
-          border-radius: 15px;
-          box-shadow: $clr-gray-dim 1px 1px 1px 0px, $clr-gray-lightslate 1.4px 1.4px 1.5px 0px inset, 0.5px 1px 1px .2px $clr-gray-dark;
-            h1{
-          text-align: center;
-          color: $medium;
+     align-items: center;
+     margin: auto;
+     background-color:  transparent;
+     // background-color: blue;
+     padding: 6px;
+     color: $clr-red;
+     font-size: 22px;
+     .icon{
           background-color: transparent;
-               }
-          .register_btn{
-               @include button_login_regiter();
-          }
-         }
-     .register_firstname,
-     .register_lastname,
-     .register_email,
-     .register_password{
-          background-color: transparent;
-          width : 100%;
-          display: flex;
-          flex-direction: column;
-          margin: 1rem auto;
-          padding: 1rem;
-          input{
-               width:50%;
-               margin: 0 auto;
-          }
-          label{
-               font-weight: 200;
-               font-size: 18px;
-               font-family: Elephant;
-               letter-spacing: 2px;
-          }
+          height:2.5vmin;
+          width: 2.5vmin;
+          color: $clr-red;
+          margin-left: 5px;
      }
-    
 }

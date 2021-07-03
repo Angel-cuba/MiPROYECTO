@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const dbConnection = require("../../database/db");
-
+const commentCtrl = {}
 
 
 const bcrypt = require('bcrypt');
@@ -42,14 +42,14 @@ router.post("/login", async (req, res) => {
             token
               });
   //**** *///comentarios de cada usuario//******** */
-//    commentCtrl.readComments = async(req, res) => {
-//      let sqlQuery = 'SELECT * FROM links WHERE user_id = ?'
+   commentCtrl.readComments = async(req, res) => {
+     let sqlQuery = 'SELECT * FROM links WHERE user_id = ?'
 
-//      await dbConnection.query(sqlQuery, [req.body.id], (err,results) => {
-//           if (err) throw err
-//           res.status(200).json(results)
-//      })
-// }
+     await dbConnection.query(sqlQuery, [req.body.id], (err,results) => {
+          if (err) throw err
+          res.status(200).json(results)
+     })
+}
         }
        }   
        else {
@@ -65,42 +65,42 @@ router.post("/login", async (req, res) => {
 });
 
 //Check to make sure header is not undefined, if so, return Forbidden (403)
-const checkToken = (req, res, next) => {
-    const header = req.headers['authorization'];
+// const checkToken = (req, res, next) => {
+//     const header = req.headers['authorization'];
 
-    if(typeof header !== 'undefined') {
-        const bearer = header.split(' ');
-        const token = bearer[1];
+//     if(typeof header !== 'undefined') {
+//         const bearer = header.split(' ');
+//         const token = bearer[1];
 
-        req.token = token;
-        next();
-    } else {
-        //If header is undefined return Forbidden (403)
-        res.sendStatus(403)
-    }
-}
-//Buscando datos del user mediante el TOKEN
-router.get('/data',  checkToken ,(req, res) => {
-                // res.json({user: 'user'})
-
-  //verify the JWT token generated for the user
-        jwt.verify(req.token, process.env.TOKEN_SECRET, (err, authorizedData) => {
-            if(err){
-                //If error send Forbidden (403)
-                console.log('ERROR: Could not connect to the protected route');
-                res.sendStatus(403);
-            } else {
-                //If token is successfully verified, we can send the autorized data 
-                res.json({
-                    message: 'Successful log in',
-                    authorizedData
-                
-                });
-                console.log('SUCCESS: Connected to protected route');
-            }
-        })
+//         req.token = token;
+//         next();
+//     } else {
+//         //If header is undefined return Forbidden (403)
+//         res.sendStatus(403)
+//     }
+// }
+// //Buscando datos del user mediante el TOKEN
+// router.get('/data',  checkToken ,(req, res) => {
+//                 // res.json({user: 'user'})
  
-})
+//   //verify the JWT token generated for the user
+//         jwt.verify(req.data.token, process.env.TOKEN_SECRET, (err, authorizedData) => {
+//             if(err){
+//                 //If error send Forbidden (403)
+//                 console.log('ERROR: Could not connect to the protected route');
+//                 res.sendStatus(403);
+//             } else {
+//                 //If token is successfully verified, we can send the autorized data 
+//                 res.json({
+//                     message: 'Successful log in',
+//                     authorizedData
+                
+//                 });
+//                 console.log('SUCCESS: Connected to protected route');
+//             }
+//         })
+ 
+// })
 
 
 module.exports = router

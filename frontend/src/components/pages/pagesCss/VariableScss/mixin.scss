@@ -4,7 +4,7 @@
 	background-color: $clr-teal;
 	color: $clr-shadow-green;
 	margin: 1rem auto;
-	padding: 0.5rem 2rem;
+	padding: 1.3rem 2rem;
 	border: none;
 	outline: none;
 	border-radius: 5px;
@@ -15,8 +15,8 @@
 	}
 }
 @mixin button_add() {
-	background-color: $clr-gray-darkslate;
-	color: $clr-black-2;
+	background-color: $clr-olive-dark;
+	color: $clr-black-8;
 	margin: 1rem auto;
 	padding: 0.5rem 2rem;
 	border: none;
@@ -29,10 +29,6 @@
 	}
 }
 
-
-
-
 @mixin title() {
-      font-size: 18px;
+	font-size: 18px;
 }
-

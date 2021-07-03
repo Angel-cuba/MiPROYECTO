@@ -32,11 +32,12 @@ commentCtrl.newComment= async (req, res) => {
           title,
           url,
           description,
-          user_id: req.user.id
-     }
+          // user_id: req.user.id 
+          
+     }  
 
        // Constant to save time 
-  const created_at = new Date(Date.now());
+  const created_at = Date(Date.now());
 
      let sqlQuery =`INSERT INTO links SET ?`
 
