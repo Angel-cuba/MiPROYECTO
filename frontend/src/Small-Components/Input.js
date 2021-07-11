@@ -1,38 +1,36 @@
 import React from 'react'
-import {  ErrorMessage, useField } from 'formik'
-
+import { useField, ErrorMessage } from 'formik'
+//ErrorMessage,
 
 const Input = ({
       label,
      // name,
-     placeholder,
-     type,
-     className= '',
+     // placeholder,
+     type = 'text',
+     // className= '',
      ...props
 }) => {
-     const [ field, meta] = useField(props)
-     // console.log(field, meta)${className}
+     const [ field, meta, helpers ] = useField(props)
+//     console.log(field, meta)
      return (
-          <div className={`out-input `}>
-               <label htmlFor={field.name}>{label}</label>
+          < >
+               <label className="label" htmlFor={field.name}>{label}</label>
                <input  
                // name = {name}
-               className = {className}
-               placeholder = {placeholder}
-               {...field}
-               //{...props}
+               // className = {className}
+               // placeholder = {placeholder}
+               {...field} {...props}
+               
                autoComplete="off"
-                
                />
-                   {/*<div className="errorMessage">
-                     <ErrorMessage name={field.name} /> <FaApple />
+               {/* {meta.error ? "error": "no" } */}
+               <p className="errorMessage"><ErrorMessage name={field.name}/> </p>
+              
+                      {/* <FaApple /> */}
                      
                           
-                 <div className="icon" > </div> 
-                    
-               </div>*/}
               
-          </div>
+          </>
      )
 }
 export default Input
