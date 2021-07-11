@@ -23,15 +23,18 @@
 			color: $medium;
 			background-color: transparent;
 		}
+		form {
+			background-color: transparent;
+		}
 		.register_btn {
-			@include button_login_regiter();
+			@include button_login_regiter( );
 		}
 	}
 	.register_firstname,
 	.register_lastname,
 	.register_email,
 	.register_password{
-	     background-color: transparent;
+	     background-color: $clr-black-6;
 	     width : 100%;
 	     display: flex;
 	     flex-direction: column;
@@ -42,13 +45,28 @@
 	          margin: 0 auto;
 	     }
 	     label{
+			display: flex;
+			width:100%;
 	          font-weight: 200;
 	          font-size: 18px;
 	          font-family: Elephant;
 	          letter-spacing: 2px;
-               
+			margin: auto;
+               background-color: red;
+			text-align: center;
 	     }
 	}
+}
+
+.label{
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	font-weight: 900;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 2px;
+	color: $clr-green;
 }
 
 .out-input {
@@ -96,7 +114,6 @@
      align-items: center;
      margin: auto;
      background-color:  transparent;
-     // background-color: blue;
      padding: 6px;
      color: $clr-red;
      font-size: 22px;
