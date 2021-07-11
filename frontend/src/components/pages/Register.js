@@ -3,10 +3,9 @@ import '../pages/css/register.css';
 import { useHistory } from 'react-router-dom';
 
 //Usando Formik
-import { Formik, Form } from 'formik';
-//Usando el input
-import { Input } from '../../Small-Components/Input';
-import InputRegister from '../../Small-Components/Allinput'
+//Usando el input (InputRegister) desde Allinput
+import InputRegister from '../../Small-Components/InputRegister'
+
 
 const Signup = () => {
 	const [firstname, setFirstname] = useState('');
@@ -57,6 +56,7 @@ const Signup = () => {
 					<input
 						type="text"
 						id="firstname"
+						name = "firstname"
 						placeholder="First name"
 						onChange={(e) => {
 							setFirstname(e.target.value);
@@ -69,6 +69,7 @@ const Signup = () => {
 					<input
 						type="text"
 						id="lastname"
+						name= "lastname"
 						placeholder="Last Name"
 						onChange={(e) => {
 							setLastname(e.target.value);
@@ -79,6 +80,7 @@ const Signup = () => {
                          <InputRegister 
                               type="text"
 						id="lastname"
+						name = "lastname"
 						placeholder="Last Name"
 						onChange={(e) => {
 							setLastname(e.target.value);
@@ -91,6 +93,7 @@ const Signup = () => {
 					<input
 						type="text"
 						id="email"
+						name= "email"
 						placeholder="Email address"
 						onChange={(e) => {
 							setEmail(e.target.value);
@@ -103,6 +106,7 @@ const Signup = () => {
 					<input
 						type="text"
 						id="password"
+						name="password"
 						placeholder="Password"
 						onChange={(e) => {
 							setPassword(e.target.value);
@@ -125,57 +129,4 @@ const Signup = () => {
 
 export default Signup;
 
-/*{
-	 <div className="register_firstname">
-                <label>Your first name</label>
-               <input 
-               type="text"
-               id="firstname"
-               placeholder="First name"
-               onChange={(e) => {setFirstname(e.target.value)}}
-               autoFocus
-               />
-               </div>
-               <div className="register_lastname">
-                 <label>Your last name</label>
-               <input 
-               type="text"
-               id="lastname"
-               placeholder="Last Name"
-               onChange={(e) => {setLastname(e.target.value)}}
-               autoFocus
-               />
-               </div>
-               <div className="register_email">
-               <label>Email</label>
-               <input 
-               type="text"
-               id="email"
-               placeholder="Email address"
-               onChange={(e) => {setEmail(e.target.value)}}
-               autoFocus
-               />
-               </div>
-               <div className="register_password">
-               <label>Password</label>
-               <input 
-               type="text"
-               id="password"
-               placeholder="Password"
-               onChange={(e) => {setPassword(e.target.value)}}
-               autoFocus
-               />
-          </div>} */
-
-
-	/*{ <div className="register_password">
-               <label>Checking password</label>
-               <input 
-               type="text"
-               id="password"
-               placeholder="Repeat Password"
-               onChange={(e) => {setPassword(e.target.value)}}
-               autoFocus
-               />
-          </div>} */
 
