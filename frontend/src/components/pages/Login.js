@@ -82,13 +82,12 @@ const Login = () => {
 							login(e, setAuthContext.setAuth);
 						}}
 					>
-						{' '}
-						Login{' '}
+						Login
 					</button>
 					<div className="register_side">
 						<h3>Do you have an account?</h3>
 
-						<NavLink to="/register">Register here</NavLink>
+						<NavLink to="/userRegister">Register here</NavLink>
 					</div>
 				</div>
 			</div>
