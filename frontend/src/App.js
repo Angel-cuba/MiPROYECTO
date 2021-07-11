@@ -11,6 +11,7 @@ import About from './components/pages/About'
 import Home from './components/pages/Home'
 import { AuthContext } from './components/lib/auth.context'
 import EachUser from './components/pages/EachUser'
+import UserRegister from './components/pages/UserRegister'
 
 // import Axios from 'axios'
 // import { response } from '../../backend/src/app';
@@ -44,6 +45,7 @@ const [ auth, setAuth] = useState(
       <Route path="/blog"> <Blog /></Route>
       <Route path="/team"><Team /></Route>
       <Route path="/register"><Register /> </Route>
+      <Route path="/userRegister"><UserRegister /></Route>
       <Route path="/about"><About/> </Route>
       <Route path="/eachUser"><EachUser/> </Route>
       <Route path="/" exact><Home/></Route>
@@ -55,26 +57,4 @@ const [ auth, setAuth] = useState(
    </>
   );
 }
-// const recoverUser= async (auth, setAuth) => {
-//   //  const id = auth.user.id
-//   await Axios.get('http://localhost:4000/api/user/data', {
-//         headers: {
-//              "Content-Type": "application/json",
-//           "Authorization": 'Bearer' + localStorage.getItem("jwt")
-//         }
-//     }) 
-//     .then(response =>{
-//           if(response){
-//             console.log(response)
-//             setAuth({
-//               ...auth, 
-//               // token: localStorage.getItem("jwt"),
-//               user: {first_name: response.authorized.first_name}})
-//             }
-//          }
-//     ) 
-//     .catch((error) => console.log(error))
-    
-// }
-
 export default App;
