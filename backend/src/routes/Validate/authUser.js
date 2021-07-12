@@ -17,53 +17,34 @@ router.post("/login", async (req, res) => {
         code: 400, 
         message: "Fields can't be empty",
         err: err
-      });  
-    } else {
-      if (results.length>0) {
+      });   
+    } else { 
+      if (results.length>0) { 
         const encryptedPasswordFromDB = results[0].pass;
         const plainTextPasswordFromBody = req.body.pass;
-
+ 
         const didPasswordMatch = bcrypt.compareSync(plainTextPasswordFromBody, encryptedPasswordFromDB); // Aquí he cambiado el == por bcrypt.compare()
  
         if (!didPasswordMatch) { 
-                    res.send({
-        code: 400,
-        failed: "error occurred in password field",
-        message: "Wrong password, but remember to check the email too",
-        err: "error",
-      });
+        res.status(403).send("Wrong password, plzz check it again!!")
         }
            else{
-     const token = jwt.sign(
+                  const token = jwt.sign(
                                         {email: req.body.email},process.env.TOKEN_SECRET,{ expiresIn: "24h" }
-                                       );
-          res.header("auth-token", token).json({
-            userDB: results,
-            token
+                                                  );
+           res.header("auth-token", token).json({
+              userDB: results,
+              token
               });
-  //**** *///comentarios de cada usuario//******** */
-   commentCtrl.readComments = async(req, res) => {
-     let sqlQuery = 'SELECT * FROM links WHERE user_id = ?'
-
-     await dbConnection.query(sqlQuery, [req.body.id], (err,results) => {
-          if (err) throw err
-          res.status(200).json(results)
-     })
-}
-        }
+          }
        }   
-       else {
-        res.send({
-        code: 403,
-        failed: "error occurred from email side",
-        message: "Email not found and be carefull with password",
-        err: "error",
-      });
-      }
+          else {
+            res.status(403).send("Email not found and be carefull with password!!")
+          } 
     }
   });
 });
-
+  
 //Check to make sure header is not undefined, if so, return Forbidden (403)
 // const checkToken = (req, res, next) => {
 //     const header = req.headers['authorization'];
