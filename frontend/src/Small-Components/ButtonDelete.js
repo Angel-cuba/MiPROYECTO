@@ -5,7 +5,7 @@ const ButtonDelete = (card) => {
      const history = useHistory()
      const deleted =async (id)=> {
   
-await fetch(`http://localhost:4000/comments/${id}`, {
+await fetch(`http://localhost:4000/comments/delete/${id}`, {
                                method: "DELETE"          
                          }) 
    .then((response)=> response.json() )               
