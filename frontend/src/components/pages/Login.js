@@ -16,12 +16,21 @@ const Login = () => {
 
 	const [userEmail, setuserEmail] = useState('');
 	const [userPassword, setuserPassword] = useState('');
-	//  const [ error, setError] = useState()
 
 	const history = useHistory();
 
 	const login = (e, setAuth) => {
 		e.preventDefault();
+		if(!userEmail || !userPassword){
+			const toastWarning = () => {
+				toast.info('Something is missing', {
+					position: toast.POSITION.TOP_CENTER,
+					autoClose: 3000
+				})
+			}
+			toastWarning()
+			
+		}
 
 		Axios.post('http://localhost:4000/api/user/login', {
 			email: userEmail,
@@ -29,7 +38,6 @@ const Login = () => {
 		})
 			.then((response) => {
 				if (response.data.token) {
-					// console.log('test', response)
 					const toastFx = () => {
 						toast.success(`Hello  ${response.data.userDB[0].first_name} is good to see ya `);
 					};
@@ -41,8 +49,11 @@ const Login = () => {
 				}
 			})
 			.catch((error) => {
-				//  setError(error)
-				console.log('este es el error : ', error);
+				const toastError = () => {
+					toast.error(`${error.response.data}`)
+				}
+				console.log('Este es el error : ', error.response);
+				if(error) toastError();
 			});
 	};
 
@@ -91,6 +102,7 @@ const Login = () => {
 					</div>
 				</div>
 			</div>
+			
 		</>
 	);
 };
