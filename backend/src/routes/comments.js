@@ -9,11 +9,11 @@ const { newComment, getByIdComment, readComments,  updateComment, deleteComment}
 router.post('/add', newComment )
 
 //by :id
-router.get('/edit/:id', getByIdComment )
+router.get('/getOne/:id', getByIdComment )
 router.put('/update/:id', updateComment)
 router.delete('/delete/:id', deleteComment)
 
-// router.delete('/:id', deleteComment)
+
 
 
 module.exports = router
