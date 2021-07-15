@@ -21,8 +21,11 @@
 .MyLinks{
  background-color: rgba(15, 12, 12, 0.061);
  width:fit-content;
+ gap: 1em;
+ display: flex;
+ justify-content: space-between;
 border-radius: 9px;
-margin: auto;
+/* margin: auto; */
 
 }
 .classCard{

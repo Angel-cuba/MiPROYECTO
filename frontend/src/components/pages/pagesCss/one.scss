@@ -1,0 +1,11 @@
+@import "../pagesCss/VariableScss/variables.scss";
+
+.update_one{
+      background-color: $clr-black-1;
+  //  background-color: rgb(76, 0, 255);
+     height: 100vh;
+     display:flex;
+     justify-content: center;
+     align-items: center;
+
+}

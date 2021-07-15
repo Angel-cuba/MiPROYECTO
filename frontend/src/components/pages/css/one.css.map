@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,WAAW,CAAA;EACL,gBAAgB,ECkCR,kBAAgB;EDhCzB,MAAM,EAAE,KAAK;EACb,OAAO,EAAC,IAAI;EACZ,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CAEvB",
+    "sources": [
+        "../pagesCss/one.scss",
+        "../pagesCss/VariableScss/variables.scss"
+    ],
+    "names": [],
+    "file": "one.css"
+}

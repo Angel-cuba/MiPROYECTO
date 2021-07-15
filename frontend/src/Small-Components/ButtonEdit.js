@@ -1,10 +1,12 @@
+
 const ButtonEdit = (card) => {
-     const edit = async (id) =>{
-           const nue=  await fetch(`http://localhost:4000/comments/${id}`)
-          console.log(nue)
+     const edit = async (id,event) => {
+          event.preventDefault();
+           const nue=  await fetch(`${process.env.REACT_APP_BACKEND_URL}/getOne/${id}`)
+           const data = nue.json()
+          console.log(data)
      }
    
-
  return(
       <>
            <button onClick={()=>edit(card.id)} className="btn btn-success btn-sm">

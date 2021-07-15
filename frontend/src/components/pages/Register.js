@@ -45,8 +45,6 @@ const Signup = () => {
 		setEmail('');
 		setPassword('');
 	};
-	// const first = (e) => {setFirstname(e.target.value)}
-
 	return (
 		<div className="pages">
 			<div className="register">
