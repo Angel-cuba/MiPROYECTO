@@ -8,9 +8,11 @@ export const All = () => {
    const [ dataCards, setdataCards ] = useState([])
        //testing timeago
 
-  useEffect( () => Links(setdataCards),[])
+  useEffect( () =>{
+       Links(setdataCards)
+       },[])
 
-
+ 
   let cards 
   if (dataCards.length) {
        cards = dataCards.map(card => (
@@ -35,7 +37,7 @@ export const All = () => {
 
 }
 const Links = async(setdataCards) => {
-     const response = await fetch("http://localhost:4000/comments/read")
+     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/read`)
      const data = await response.json()
      setdataCards(data)
 }
