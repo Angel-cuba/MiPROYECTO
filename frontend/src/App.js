@@ -12,6 +12,7 @@ import Home from './components/pages/Home'
 import { AuthContext } from './components/lib/auth.context'
 import EachUser from './components/pages/EachUser'
 import UserRegister from './components/pages/UserRegister'
+import One from './readLinks/One';
 
 // import Axios from 'axios'
 // import { response } from '../../backend/src/app';
@@ -24,11 +25,6 @@ const [ auth, setAuth] = useState(
                 :   
                   undefined 
 )
-
-// useEffect(() => {
-//     if(localStorage.getItem("jwt")) recoverUser(setAuth)
-// }, [])
-
   return (
     <>
     <AuthContext.Provider value={{auth, setAuth}}>
@@ -48,6 +44,7 @@ const [ auth, setAuth] = useState(
       <Route path="/userRegister"><UserRegister /></Route>
       <Route path="/about"><About/> </Route>
       <Route path="/eachUser"><EachUser/> </Route>
+      <Route path="/one/:id"><One/></Route>
       <Route path="/" exact><Home/></Route>
    
     </Switch>
