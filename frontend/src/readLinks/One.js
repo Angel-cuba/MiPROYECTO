@@ -1,71 +1,39 @@
 import { useEffect, useState } from "react"
-import OneLink from './OneLinkById'
-
-
-
+import OneById from './OneLinkById'
+import { useParams } from 'react-router-dom'
+import './../components/pages/css/one.css'
 
 const One = () => {
+         const { id }  = useParams()  
           const [ oneData, setoneData ] = useState([])
    
        //testing timeago
 
-//   useEffect( () => Links(setdataCards),[])
+  useEffect( () =>Links(setoneData) ,[])
 
-
-  let card
-  if (oneData) {
-       card = oneData.map(card => (
-            <OneLink
-            key={card.id}
-             id = {card.id}
-             title={card.title}
-             url={card.url}
-             description = {card.description}
-          created_at={card.created_at}
-
-            />
-                         
-
-       ))
-  }
+const Links = async(setoneData) => {
+     const response = await fetch(`http://localhost:4000/comments/getOne/${id}`)
+     const data = await response.json()
+     console.log(data[0])
+     setoneData(data[0])}
 
 return (
      <>
-     <div className="container p-4">
-                    <div className="col-md-4  mx-auto">
-                         <div className="card ">
-                              <div className="card-body">
-                                   <form action={`http://localhost:4000/comments/:id`} method="GET">
-                                        <div className="form-group">
-                                             <input type="text" className="form-control" name="title" placeholder="Title" autoFocus >{card.title}</input>
-                                             </div>
-                                             <div className="form-group">
-                                                  <input type="text" className="form-control" name="url" placeholder="Url">{card.url}</input>
-                                             </div>
-                                             <div className="form-group">
-                                                  <textarea name="description"  className="form-control"  id="" rows="2" placeholder="Description">{card.description}</textarea>
-                                             </div>
-                                           <div className="form-group">
-                                                <button className="btn btn-success btn-block">Save</button>
-                                           </div>
-                                   </form>
-                              </div>
-                         </div>
-                    </div>
-
-            </div>
- 
-
+     {/* <h1>Hola</h1><h1>{oneData.description}</h1> */}
+     <div className="update_one">
+          <OneById title={oneData.title} 
+                         url={oneData.url}
+                         description={oneData.description}
+               />
+     {/* <input type="text">{oneData.url}</input> */}
+     </div>     
      </>
 )
 
 
 }
-const Links = async(setdataCards, id) => {
-     const response = await fetch(`http://localhost:4000/comments/${id}`)
-     const data = await response.json()
-     setdataCards(data)
-}
+
+
 
 
 export default One
