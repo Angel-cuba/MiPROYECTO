@@ -12,7 +12,7 @@ const One = () => {
   useEffect( () =>Links(setoneData) ,[])
 
 const Links = async(setoneData) => {
-     const response = await fetch(`http://localhost:4000/comments/getOne/${id}`)
+     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/getOne/${id}`)
      const data = await response.json()
      console.log(data[0])
      setoneData(data[0])}

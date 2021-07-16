@@ -10,7 +10,7 @@ const ButtonEdit = (card) => {
  return(
       <>
            <button onClick={()=>edit(card.id)} className="btn btn-success btn-sm">
-                <a href={`http://localhost:3000/One/${card.id}`}>Edit</a>
+                <a href={`/One/${card.id}`}>Edit</a>
                 </button>
 
       </>

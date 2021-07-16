@@ -17,7 +17,7 @@ const Signup = () => {
 
 	const register = async (e) => {
 		e.preventDefault();
-		await fetch('http://localhost:4000/api/user/register', {
+		await fetch(`${process.env.REACT_APP_API_USER}/register`, {
 			method: 'POST',
 			body: JSON.stringify({
 				first_name: firstname,
