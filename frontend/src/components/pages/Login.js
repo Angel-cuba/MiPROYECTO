@@ -38,8 +38,10 @@ const Login = () => {
 		})
 			.then((response) => {
 				if (response.data.token) {
+					const name = (response.data.userDB[0].first_name).toUpperCase()
 					const toastFx = () => {
-						toast.success(`Hello  ${response.data.userDB[0].first_name} is good to see ya `);
+						toast.success('Hello ' + name + ' is good to see ya..!');
+						// ${response.data.userDB[0].first_name}
 					};
 					localStorage.setItem('jwt', JSON.stringify(response.data.token));
 					setAuth(response.data.token);
