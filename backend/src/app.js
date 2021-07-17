@@ -12,7 +12,7 @@ const app = express()
 require('dotenv').config()
      
 //PORT 
-app.set('port',process.env.PORT || 4000)
+app.set('port',process.env.PORT || 8080)
 
 app.use(morgan('combined'))
 
@@ -26,20 +26,19 @@ app.use(morgan('combined'))
 //     res.setHeader('Acces-Contorl-Allow-Methods','Content-Type','Authorization');
 //     next(); 
 // })
-module.exports = function(app) {
+module.exports = function(app) {}
   app.use(function(req, res, next) {
     res.header(
-      "Access-Control-Allow-Headers",
-      "x-access-token, Origin, Content-Type, Accept"
+      {"Access-Control-Allow-Headers":"*"}
     );
-    next();
-  });}
-let options = {
-     origin: 'http://localhost:3000',
+    next(); 
+  });  
+let options = { 
+     origin: '*',
      method: 'POST, GET, PUT, DELETE',
 }     
      
-app.use(cors());
+app.use(cors(options));
 app.use( express.json());
 app.use( express.urlencoded( { extended: false } ) );
 
