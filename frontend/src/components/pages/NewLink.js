@@ -14,7 +14,7 @@ export const NewLinks = () => {
 		e.preventDefault();
 		const newLink = { title, url, description };
 		try {
-			const response = await fetch('http://localhost:4000/comments/add', {
+			const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/add`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

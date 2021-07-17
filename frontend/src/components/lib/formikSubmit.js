@@ -10,7 +10,7 @@ export const formikSubmit = {
         initialValues : initialValues,
        
         onSubmit: async (values) => {
-               await fetch('http://localhost:4000/api/user/register', {
+               await fetch(`${process.env.REACT_APP_API_USER}/register`, {
 			method: 'POST',
 			body: JSON.stringify({
 				first_name: values.first_name,
@@ -32,15 +32,11 @@ export const formikSubmit = {
                     const registerOK = () => {
                           toast.success('Your registration has been successfully registered')
                          }     
-				// history.push('/login');
-                    window.location.reload()
-                    // alert('Your registration has been OK')
-                    window.location.href('/login')
-                    registerOK()
-                    }
-				
+                         window.location.reload()
+                         window.location.href('/login')
+                         registerOK()
+                      }
                     			})
-			// .then((data) => console.log(data))
 			.catch((error) => {
 				console.log('Looks like there was an error: \n', error);
 			});

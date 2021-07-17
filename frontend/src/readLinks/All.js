@@ -37,7 +37,12 @@ export const All = () => {
 
 }
 const Links = async(setdataCards) => {
-     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/read`)
+     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/read`
+     // , {
+     //       mode: 'no-cors',
+     //       method: 'GET'
+     //       }
+           )
      const data = await response.json()
      setdataCards(data)
 }
