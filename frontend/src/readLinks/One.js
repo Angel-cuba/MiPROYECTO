@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react"
-import OneById from './OneLinkById'
 import { useParams } from 'react-router-dom'
 import './../components/pages/css/one.css'
+
+import { Formik, Form } from 'formik'
+import { formikUpdate } from '../components/lib/formikUpdate'
+
+import Input from '../Small-Components/Input'
 
 const One = () => {
          const { id }  = useParams()  
@@ -19,13 +23,27 @@ const Links = async(setoneData) => {
 
 return (
      <>
-     {/* <h1>Hola</h1><h1>{oneData.description}</h1> */}
      <div className="update_one">
-          <OneById title={oneData.title} 
-                         url={oneData.url}
-                         description={oneData.description}
-               />
-     {/* <input type="text">{oneData.url}</input> */}
+        <Formik {...formikUpdate}>
+             {formik => (
+                  <div className="update_section">
+                    
+               <Form>
+                    <Input label='Title' name="title" placeholder={oneData.title}/>
+                    {/* <p>{oneData.url}</p> */}
+                    <Input label="Url" name="url" placeholder={oneData.url}/>
+                    <Input label="Description" name="description" placeholder={oneData.description}/>
+                          <button type="submit">Update</button>
+               </Form>
+                    
+               </div>
+             )}
+               
+        </Formik>
+          
+              
+               {/* http://localhost:8080/comments 
+               https://git.heroku.com/miproyectonode.git*/}
      </div>     
      </>
 )
