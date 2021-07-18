@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { Formik, Form } from 'formik'
 import Input from '../../Small-Components/Input'
 
-import { formikSubmit } from '../lib/formikSubmit'
+import { formikSubmit } from '../../lib/formikSubmit'
 
 
 const UserRegister = () => {

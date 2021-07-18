@@ -9,7 +9,7 @@ import Team from './components/pages/Team'
 import Register from './components/pages/Register'
 import About from './components/pages/About'
 import Home from './components/pages/Home'
-import { AuthContext } from './components/lib/auth.context'
+import { AuthContext } from './lib/auth.context'
 import EachUser from './components/pages/EachUser'
 import UserRegister from './components/pages/UserRegister'
 import One from './readLinks/One';

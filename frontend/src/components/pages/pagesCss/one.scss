@@ -1,10 +1,44 @@
 @import "../pagesCss/VariableScss/variables.scss";
 
 .update_one{
-      background-color: $clr-black-1;
+    background-color: $clr-black-1;
      height: 100vh;
      display:flex;
      justify-content: center;
      align-items: center;
-
+    .formik{
+        background-color: red;
+        width: 100%;
+        display:flex;
+        padding: 1rem;
+    }
+     .update_section{
+        width:100%;
+        display:flex;
+        flex-wrap: wrap;
+        // align-items: center;
+        justify-content: center;
+        align-content: center;
+        padding: 10rem;
+        background-color: blue;
+        // .form{
+        //     width: 100%;
+        //     padding: 1rem;
+        //     background-color: black;
+        // }
+           .input_one{
+                width: 90%;
+                margin: auto;
+                &::placeholder{
+                    color: $clr-shadow-azure;
+                    padding: 1rem 0 1rem 3rem;
+                }
+           }
+           .update_btn{
+               background-color: $clr-cyan-dark;
+               outline: none;
+               border: none;
+               margin: 1rem auto
+           }
+    }
 }
