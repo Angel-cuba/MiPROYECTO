@@ -1,8 +1,8 @@
 import NavBar from './components/Navbar/Navbar';
 import { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './css/App.css'
-import './css/Pages.css'
+import './components/pages/css/App.css'
+import './components/pages/css/Pages.css'
 import Login from './components/pages/Login'
 import Blog from './components/pages/Blog'
 import Team from './components/pages/Team'
