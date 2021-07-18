@@ -1,0 +1,113 @@
+*,
+::after,
+::before {
+  /* background-color:rgba(28, 8, 119, 0.904); */
+  background-color: rgba(15, 191, 245, 0.164);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* background-image: linear-gradient(315deg, #100d25 50%, #775858 74%);  */
+}
+
+@-webkit-keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.MyLinks {
+  background-color: rgba(15, 12, 12, 0.0201);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  /* gap: 1em; */
+  margin-top: 1em;
+  /* display: flex;
+ justify-content: space-between; */
+  border-radius: 10px;
+  /* margin: auto; */
+}
+
+.classCard {
+  background-color: rgba(45, 73, 44, 0.246);
+  width: 300px;
+  margin: 1em;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.4rem;
+  border-radius: 10px;
+}
+
+.classCard .card-header {
+  text-align: center;
+}
+
+.card-body {
+  text-align: center;
+  cursor: pointer;
+}
+
+.button {
+  width: 120px;
+  margin: 1rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: transparent;
+}
+
+.all {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* width: fit-content; */
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: Elephant;
+  /* font-weight: 900; */
+}
+
+span {
+  background-color: rgba(8, 226, 226, 0.267);
+  padding: 0.5em;
+  margin: auto;
+  border: 2px solid rgba(8, 226, 226, 0.267);
+  /* border */
+  border-radius: 50% 20%/10% 30%;
+}
+
+.mytimeago {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgba(128, 128, 128, 0.062);
+  margin: 0.53rem auto;
+  padding: 1rem;
+  outline: 2px solid #dfd2d2;
+  background-color: #2f4353;
+  background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 54%, #8f5e1d21 24%);
+}
+/*# sourceMappingURL=App.css.map */

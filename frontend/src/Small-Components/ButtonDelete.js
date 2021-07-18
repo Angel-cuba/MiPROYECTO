@@ -5,7 +5,7 @@ const ButtonDelete = (card) => {
      const history = useHistory()
      const deleted =async (id)=> {
   
-await fetch(`http://localhost:4000/comments/delete/${id}`, {
+await fetch(`${process.env.REACT_APP_BACKEND_URL}/delete/${id}`, {
                                method: "DELETE"          
                          }) 
    .then((response)=> response.json() )               

@@ -8,6 +8,7 @@ const ButtonEdit = (card) => {
      }
    
  return(
+               //   edit(card.id)
       <>
            <button onClick={()=>edit(card.id)} className="btn btn-success btn-sm">
                 <a href={`/One/${card.id}`}>Edit</a>
