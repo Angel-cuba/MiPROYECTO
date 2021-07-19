@@ -8,7 +8,6 @@ export const validateLogin = yup.object().shape({
                     .required("Can't forget the password")
 
 })
-
 export const initialValuesLogin = {
      email: '',
      password: ''
