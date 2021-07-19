@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 //Importing Formiks objects
 import { Formik, Form } from 'formik'
-import { initialValues, validateUpdate } from '../lib/validateUpdate'
+import { initialValues, validateUpdate } from '../lib/validateForms/validateUpdate'
 import Input from '../Small-Components/Input'
  
 const One = (card) => {
@@ -70,9 +70,9 @@ return (
           <div className="update_section">
                <Form>
                     <Input label='Title' name="title" placeholder={oneData.title} 
-                              className="input_one"/>
+                         className="input_one"/>
                     <Input label="Url" type="url" name="url" placeholder={oneData.url}   
-                    className="input_one"/>
+                         className="input_one"/>
                     <Input label="Description" name="description" placeholder={oneData.description} 
                          className="input_one"/>
           

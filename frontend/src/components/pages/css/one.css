@@ -1,5 +1,4 @@
 .update_one {
-  background-color: rgba(0, 0, 0, 0.1);
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,7 +12,6 @@
 }
 
 .update_one .formik {
-  background-color: red;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -22,7 +20,8 @@
 }
 
 .update_one .update_section {
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,7 +33,6 @@
   -ms-flex-line-pack: center;
       align-content: center;
   padding: 10rem;
-  background-color: blue;
 }
 
 .update_one .update_section .input_one {

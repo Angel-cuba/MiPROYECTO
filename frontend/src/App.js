@@ -9,13 +9,11 @@ import Team from './components/pages/Team'
 import Register from './components/pages/Register'
 import About from './components/pages/About'
 import Home from './components/pages/Home'
-import { AuthContext } from './lib/auth.context'
+import { AuthContext } from './lib/auth/auth.context'
 import EachUser from './components/pages/EachUser'
 import UserRegister from './components/pages/UserRegister'
 import One from './readLinks/One';
 
-// import Axios from 'axios'
-// import { response } from '../../backend/src/app';
  
 function App() {
 const [ auth, setAuth] = useState(

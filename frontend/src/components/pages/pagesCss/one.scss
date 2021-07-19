@@ -1,26 +1,24 @@
 @import "../pagesCss/VariableScss/variables.scss";
 
 .update_one{
-    background-color: $clr-black-1;
+    // background-color: $clr-black-3;
      height: 100vh;
      display:flex;
      justify-content: center;
      align-items: center;
     .formik{
-        background-color: red;
         width: 100%;
         display:flex;
         padding: 1rem;
     }
-     .update_section{
-        width:100%;
+    .update_section{
+        width: 90%;
+        margin: 0 auto;
         display:flex;
         flex-wrap: wrap;
-        // align-items: center;
         justify-content: center;
         align-content: center;
         padding: 10rem;
-        background-color: blue;
         // .form{
         //     width: 100%;
         //     padding: 1rem;

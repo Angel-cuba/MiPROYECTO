@@ -1,12 +1,11 @@
 import React from 'react'
 import '../pages/css/register.css';
-import { useHistory } from 'react-router-dom';
 
 //Importando Formik
 import { Formik, Form } from 'formik'
 import Input from '../../Small-Components/Input'
 
-import { formikSubmit } from '../../lib/formikSubmit'
+import { formikRegister } from '../../lib/formikRegister'
 
 
 const UserRegister = () => {
@@ -20,7 +19,7 @@ const UserRegister = () => {
  return (
       <>
       <div className="pages">
-           <Formik {...formikSubmit}>
+           <Formik {...formikRegister}>
                {formik => (
                <div className="register">
                     <h1>Usando el Formik</h1>

@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { Nav, NavMenu, NavLink, NavBtn, HomeBtn , LoginBtnLink, LogOutBtnLink } from './NavbarElements'
-import { AuthContext } from '../../lib/auth.context'
+import { AuthContext } from '../../lib/auth/auth.context'
 import { useHistory} from 'react-router-dom'
 import  UserButton  from '../../Small-Components/UserButton'
 

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import './css/login.css';
 import { useState, useContext } from 'react';
 import Axios from 'axios';
-import { AuthContext } from '../../lib/auth.context';
+import { AuthContext } from '../../lib/auth/auth.context';
 import { NavLink } from '../../components/Navbar/NavbarElements';
 
 import { toast } from 'react-toastify';
@@ -48,6 +48,7 @@ const Login = () => {
 					toastFx();
 
 					history.push('/EachUser');
+					console.log(userEmail);
 				}
 			})
 			.catch((error) => {

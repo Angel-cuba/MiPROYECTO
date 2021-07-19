@@ -1,10 +1,10 @@
 // import useHistory from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { initialValues, validateRegisters } from '../lib/validateRegister'
+import { initialValues, validateRegisters } from './validateForms/validateRegister'
 // const history = useHistory()
 
-export const formikSubmit = {  
+export const formikRegister = {  
    
 
         initialValues : initialValues,

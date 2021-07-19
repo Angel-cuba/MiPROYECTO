@@ -1,11 +1,10 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { initialValues, validateUpdate } from '../lib/validateUpdate'
+import { initialValues, validateUpdate } from './validateForms/validateUpdate'
 
 export const formikUpdate = {
      initialValues: initialValues,
      onSubmit: async (values, id) => {
-          
           await fetch(`${process.env.REACT_APP_BACKEND_URL}/update/${id}`,
                {
                     method: 'PUT',
@@ -13,12 +12,10 @@ export const formikUpdate = {
                     title : values.title,
                     url: values.url,
                     description: values.description
-
                     }),
                     headers: {
                          'Content-Type': 'application/json'
                     }
-
                })
                .then(response => {
                     if(!response){
@@ -33,9 +30,6 @@ export const formikUpdate = {
                          updateOK()
                     }
                })
-
-          console.log(values)
-
      },
      validationSchema: validateUpdate,
      validateOnChange: true,
