@@ -30,7 +30,6 @@ export const formikUpdate = {
                     const updateOK = () => {
                           toast.success('Your registration has been successfully registered')
                          }     
-                         // window.location.href('/eachUser')
                          updateOK()
                     }
                })
