@@ -11,6 +11,7 @@ export const validateRegisters = yup.object().shape({
                     .required('This field is required'),
      email: yup.string()
                     .email('Invalid email address, plzz check again')
+                    .matches(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 'This email has some invalid characters')
                     .required('This field is required'),
      password: yup.string()
                     .min(6, 'Too short')
@@ -21,6 +22,9 @@ export const validateRegisters = yup.object().shape({
                     .required('This field is required')
 
 })
+// Validaciones para lso emails
+// /^[aA-zZ\s]+$/
+// /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i
 
 export const initialValues = {
          first_name: '' ,

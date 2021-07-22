@@ -55,7 +55,7 @@ export const formikRegister = {
 
         }, 
         validationSchema : validateRegisters,
-        validateOnChange: true,
-        validateOnBlur: false
+        validateOnChange: false,
+        validateOnBlur: true
        
    }
