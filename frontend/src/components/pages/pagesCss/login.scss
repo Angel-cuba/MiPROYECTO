@@ -7,16 +7,21 @@
 }
 .login_page {
 	width: 100%;
-	height: calc(100vh - 85.4px);
+		// height: calc(100vh - 85.4px);
+     height: 100vh;
+	// margin: auto;
 	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .login {
 	background-color: rgba(12, 14, 15, 0.829);
 	width: 500px;
 	display: flex;
 	flex-direction: column;
-	margin: auto;
-	padding: 7em 1em;
+	
+	// justify-content: center;
+	padding: 4em 1em 3em 1em;
 	border-radius: 13px;
      text-align: center;
           h1 {
@@ -37,10 +42,83 @@
                width: fit-content;
                margin: auto;
                border-radius: 5px;
-		
+			letter-spacing: .6px;
           }
 		
      }    
+	.line_top{
+		width: 80%;
+		height: .5px;
+		background-color: $clr-gray-slate;
+		margin: 2.3rem auto 1rem auto;
+	}
+	.line_bottom{
+		width: 80%;
+		height: .5px;
+		background-color: $clr-gray-slate;
+		margin: 1rem auto 3.1rem auto;
+	}
+	.social_media{
+		width : 90%;
+		margin: auto;
+		background-color: transparent;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		// flex-direction: column;
+		.movil{
+			display: flex;
+			background-color: transparent;
+		}
+		.social_text{
+			background-color: transparent;
+			color: $clr-olive-1;
+		}
+		.google{
+			background-color: transparent;
+			fill: $googlered;
+			&:hover{
+				fill : $yelp;
+				cursor: pointer;
+			}
+		}
+		.github{
+			background-color: transparent;
+			fill: $apple;
+			&:hover{
+				fill: $clr-gray-slate;
+				cursor: pointer;
+			}
+		}
+		.facebook{
+			background-color: transparent;
+			border-radius: 50%;
+			fill: $facebookold;
+			&:hover{
+				fill: $tumblr;
+				cursor: pointer;
+
+			}
+		}
+		.bi{
+			margin: 1rem;
+			background-color: transparent;
+		}
+	
+	}
+	.login_span{
+		background-color: $clr-cyan-dark;
+		border-radius: 5px;
+		border: none;
+		outline: none;
+		color: $clr-olive-1;
+		&:hover{
+			color: $clr-olive-3;
+			outline-style: solid;
+			outline-width: 2px;
+			outline-color: $clr-black-5;
+		}
+	}
 }
 
 label {
@@ -75,4 +153,35 @@ input {
      &::placeholder{
           color: rgb(195, 188, 188);
      }
+}
+
+@media screen and (max-width: $movil){
+	.login_page {
+		height: 100vh;
+		// background-color:red;
+		.login{
+			width: 100%;			
+			border-radius: .01px;
+			padding: 7.5em 2em 1em 2em;
+		
+		.social_media{
+			flex-direction: column;
+		}
+		.login_span{
+			margin-top: 1rem;
+		}
+		}
+	}
+	.email, .password {
+		width: 100%;
+	}
+	input {
+		padding-left: 2rem;
+	}
+	h6{
+		font-size: 1.2rem;
+		letter-spacing: 2px;
+		font-family: 'Inconsolata';
+		font-weight: 900;
+	}
 }

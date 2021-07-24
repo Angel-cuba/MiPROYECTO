@@ -4,10 +4,16 @@
 
 .login_page {
   width: 100%;
-  height: calc(100vh - 85.4px);
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .login {
@@ -20,8 +26,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: auto;
-  padding: 7em 1em;
+  padding: 4em 1em 3em 1em;
   border-radius: 13px;
   text-align: center;
 }
@@ -49,6 +54,98 @@
   width: fit-content;
   margin: auto;
   border-radius: 5px;
+  letter-spacing: .6px;
+}
+
+.login .line_top {
+  width: 80%;
+  height: .5px;
+  background-color: #708090;
+  margin: 2.3rem auto 1rem auto;
+}
+
+.login .line_bottom {
+  width: 80%;
+  height: .5px;
+  background-color: #708090;
+  margin: 1rem auto 3.1rem auto;
+}
+
+.login .social_media {
+  width: 90%;
+  margin: auto;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login .social_media .movil {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: transparent;
+}
+
+.login .social_media .social_text {
+  background-color: transparent;
+  color: #BDB76B;
+}
+
+.login .social_media .google {
+  background-color: transparent;
+  fill: #ea4335;
+}
+
+.login .social_media .google:hover {
+  fill: #d32323;
+  cursor: pointer;
+}
+
+.login .social_media .github {
+  background-color: transparent;
+  fill: #a6b1b7;
+}
+
+.login .social_media .github:hover {
+  fill: #708090;
+  cursor: pointer;
+}
+
+.login .social_media .facebook {
+  background-color: transparent;
+  border-radius: 50%;
+  fill: #3b5998;
+}
+
+.login .social_media .facebook:hover {
+  fill: #2c4762;
+  cursor: pointer;
+}
+
+.login .social_media .bi {
+  margin: 1rem;
+  background-color: transparent;
+}
+
+.login .login_span {
+  background-color: #005050;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: #BDB76B;
+}
+
+.login .login_span:hover {
+  color: #F0E68C;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: rgba(0, 0, 0, 0.5);
 }
 
 label {
@@ -116,5 +213,37 @@ input::-ms-input-placeholder {
 
 input::placeholder {
   color: #c3bcbc;
+}
+
+@media screen and (max-width: 767px) {
+  .login_page {
+    height: 100vh;
+  }
+  .login_page .login {
+    width: 100%;
+    border-radius: .01px;
+    padding: 7.5em 2em 1em 2em;
+  }
+  .login_page .login .social_media {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .login_page .login .login_span {
+    margin-top: 1rem;
+  }
+  .email, .password {
+    width: 100%;
+  }
+  input {
+    padding-left: 2rem;
+  }
+  h6 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-family: 'Inconsolata';
+    font-weight: 900;
+  }
 }
 /*# sourceMappingURL=login.css.map */

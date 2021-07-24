@@ -1,5 +1,9 @@
 @import './variables.scss';
 
+// values to responsive designe
+$movil : 767px;
+$laptop : 1024px;
+
 @mixin button_login_regiter() {
 	background-color: $clr-teal;
 	color: $clr-shadow-green;
