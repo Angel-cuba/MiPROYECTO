@@ -23,8 +23,10 @@ export const validateRegisters = yup.object().shape({
 
 })
 // Validaciones para lso emails
-// /^[aA-zZ\s]+$/
-// /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i
+//-->/^[aA-zZ\s]+$/
+//-->/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i
+
+//--> /^(?:(?:(?:[a-zA-Z0-9!#$%&'*+/=?^_`{}|~-](?:[a-zA-Z0-9!#$%&'*+/=?^_`{}|~.-]*[a-zA-Z0-9!#$%&'*+/=?^_`{}|~-])?)|(?:(\")[a-zA-Z0-9\(\)<>\[\]:,;@\\\"!#$%&'*+/=?^_`{}| ~.-]{1,}\1))\@(?:(?:(?:[a-z0-9]+\.){1,2}[a-z]{2,10})|(?:[a-z0-9]+)))$/
 
 export const initialValues = {
          first_name: '' ,
