@@ -220,8 +220,8 @@ input::placeholder {
     height: 100vh;
   }
   .login_page .login {
-    width: 100%;
-    border-radius: .01px;
+    width: 90%;
+    border-radius: 10px;
     padding: 7.5em 2em 1em 2em;
   }
   .login_page .login .social_media {
