@@ -142,10 +142,7 @@
 }
 
 .login .login_span:hover {
-  color: #F0E68C;
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: rgba(0, 0, 0, 0.5);
+  color: inherit;
 }
 
 label {

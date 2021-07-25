@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 //Usando Formik
 //Usando el input (InputRegister) desde Allinput
-import InputRegister from '../../Small-Components/InputRegister'
+import { InputRegister } from '../../Small-Components/InputRegister'
 
 
 const Signup = () => {
