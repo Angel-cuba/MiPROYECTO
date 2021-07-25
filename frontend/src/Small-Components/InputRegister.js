@@ -1,14 +1,14 @@
 import React from 'react'
 
-const InputRegister = ({
+export const InputRegister = ({
      type= 'text',
      name,
      className = '',
      ...props
 }) => (
      <>
-          <label className={`out-input ${className}`}>
-                    <span className="span">{name}</span>
+          <label className={`blog ${className}`}>
+                    <p className="spanName">{name}</p>
                     <input
                     {...props}
                     ></input>
@@ -17,4 +17,4 @@ const InputRegister = ({
          
      )
 
-export default InputRegister
+ 
