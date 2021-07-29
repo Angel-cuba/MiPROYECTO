@@ -4,7 +4,9 @@ ctrl.index = (req, res) => {
           res.send('Primera ruta')
 }
 ctrl.create = (req, res) => {
-     res.send('Create')
+     console.log(req.file)
+     res.send('Works')
+     
 }
 ctrl.like = (req, res) => {
      res.send('Like side')
