@@ -2,11 +2,10 @@ import NavBar from './components/Navbar/Navbar';
 import { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './components/pages/css/App.css'
-import './components/pages/css/Pages.css'
+// import './components/pages/css/Pages.css'
 import Login from './components/pages/Login'
 import Blog from './components/pages/Blog'
 import Team from './components/pages/Team'
-import Register from './components/pages/Register'
 import About from './components/pages/About'
 import Home from './components/pages/Home'
 import { AuthContext } from './lib/auth/auth.context'
@@ -38,7 +37,6 @@ const [ auth, setAuth] = useState(
 
       <Route path="/blog"> <Blog /></Route>
       <Route path="/team"><Team /></Route>
-      <Route path="/register"><Register /> </Route>
       <Route path="/userRegister"><UserRegister /></Route>
       <Route path="/about"><About/> </Route>
       <Route path="/eachUser"><EachUser/> </Route>
