@@ -32,6 +32,20 @@ $laptop : 1024px;
 		font-weight: 600;
 	}
 }
+@mixin button_sendImage() {
+	background-color: $clr-gray-darkslate;
+	color: $clr-black-8;
+	margin: 1rem auto;
+	padding: 0.5rem 2rem;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	&:hover {
+		background-color: $clr-black-5;
+		color: $clr-snow;
+		font-weight: 600;
+	}
+}
 
 @mixin title() {
 	font-size: 18px;

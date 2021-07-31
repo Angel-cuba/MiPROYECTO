@@ -8,35 +8,3 @@
         color: rgba(174, 209, 16, 0.924);
         margin-top: 85px;
 }
-form{
-  background-color: transparent;
-}
-.form{
-  display: flex;
-  justify-content: flex-start;
-  // align-items: center;
-  flex-direction: column;
-  div{
-    margin-top: 2em;
-    margin-left: 2em;
-    background-color: transparent;
-    label{
-      margin-right: 2em;
-    }
-  }
-  textarea{
-    border: none;
-    outline: none;
-    background-color: rgba(59,38,38,.443);
-    padding: .4rem;
-  }
-}
-.blog{
-  text-align: center;
-  .spanName{
-    background-color: transparent;
-    color: $clr-olive-1;
-    letter-spacing: 1.5px;
-    font-family: Elephant;
-  }
-}
