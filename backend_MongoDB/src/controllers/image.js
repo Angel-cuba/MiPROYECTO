@@ -30,12 +30,12 @@ ctrl.create = async (req, res) => {
           // console.log(req.body);
           const ImageSaved = await newImage.save()
           console.log(newImage);
-         
+         res.send('Works');
 	}else{
           console.log('Nop..!!');
-           res.status(403).send('Has a mistake')
-     }
-     res.send('Works');
+          await fs.unlink(imgTemporalPath)
+          res.status(500).json({message: 'Has a mistake'})
+     }   
 };
 ctrl.like = (req, res) => {
 	res.send('Like side');
