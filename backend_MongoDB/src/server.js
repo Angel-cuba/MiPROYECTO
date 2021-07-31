@@ -8,6 +8,17 @@ const cors = require('cors');
 
 const routes = require('./routes/routes');
 
+//El setMaxListeners()
+const EventEmitter = require('events');
+class MyEmitter extends EventEmitter {}
+const myEmitter = new MyEmitter();
+// increase the limit
+myEmitter.setMaxListeners(5);
+for(let i = 0; i < 5; i++) {
+  myEmitter.on('event', _ => console.log(i));
+}
+myEmitter.emit('event');
+
 module.exports = (app) => {
 	app.set('port', process.env.PORT || 3002);
 
