@@ -1,23 +1,35 @@
-const ctrl = {}
+const ctrl = {};
+const path = require('path');
+const { randomName } = require('../helpers/libs');
+const fs = require('fs-extra');
 
 ctrl.index = (req, res) => {
-          res.send('Primera ruta')
-}
-ctrl.create = (req, res) => {
-     console.log(req.file)
-     res.send('Works')
-     
-}
+	res.send('Primera ruta');
+};
+ctrl.create = async (req, res) => {
+	const imgUrl = randomName();
+	console.log(imgUrl);
+	const imgTempPath = req.file.path;
+	console.log(imgTempPath);
+	const ext = path.extname(req.file.originalname).toLocaleLowerCase();
+	const targetPath = path.resolve(`src/public/upload/${imgUrl}${ext}`);
+	console.log(targetPath);
+
+	if (ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif') {
+		await fs.copy(imgTempPath, targetPath);
+	}
+	res.send('Works');
+};
 ctrl.like = (req, res) => {
-     res.send('Like side')
-}
+	res.send('Like side');
+};
 
 ctrl.comment = (req, res) => {
-     res.send('Comment')
-}
+	res.send('Comment');
+};
 
 ctrl.remove = (req, res) => {
-     res.send('Deleted')
-}
+	res.send('Deleted');
+};
 
-module.exports = ctrl
+module.exports = ctrl;
