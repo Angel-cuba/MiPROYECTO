@@ -4,43 +4,60 @@ const { randomName } = require('../helpers/libs');
 const fs = require('fs-extra');
 const { Image } = require('../models/index')
 
-ctrl.index = (req, res) => {
-	res.send('Primera ruta');
-};
-ctrl.create = async (req, res) => {
-     console.log(req.file)
-	const imgUrl = randomName();
-	console.log(imgUrl);
-	const imgTemporalPath = req.file.path;
-	console.log(imgTemporalPath);
-	const ext = path.extname(req.file.originalname).toLocaleLowerCase();
-	const targetSavedPath = path.resolve(`src/public/upload/${imgUrl}${ext}`);
-	console.log(targetSavedPath);
+// const { ImageModel } = require('../models/image')
 
-	if (ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif') {
-		await fs.copy(imgTemporalPath, targetSavedPath)
-                      .then(() => console.log('Success...!!!'))
-                      .catch(err => console.error(err));
-            const newImage = new Image({
-                          title: req.body.title,
-                          filename: imgUrl + ext,
-                          description: req.body.description
-                    })
-          
-          // console.log(req.body);
-          const ImageSaved = await newImage.save()
-          console.log(newImage);
-         res.send('Works');
-	}else{
-          console.log('Nop..!!');
-          await fs.unlink(imgTemporalPath)
-          res.status(500).json({message: 'Has a mistake'})
-     }   
+ctrl.index = async(req, res) => {
+         const images =  await Image.find()
+         console.log(images);
+         
+         res.status(200).send(images);
+};
+ctrl.create =  (req, res) => { 
+
+  const saveImage = async () => {
+          console.log(req.file)
+          const imgUrl = randomName();
+          const images = await Image.find({filename: imgUrl})
+          //Chequea si está el nombre repetido
+          if(images.length > 0){
+               saveImage()
+          }else{
+                 console.log(imgUrl);
+          const imgTemporalPath = req.file.path;
+          console.log(imgTemporalPath);
+          const ext = path.extname(req.file.originalname).toLocaleLowerCase();
+          const targetSavedPath = path.resolve(`src/public/upload/${imgUrl}${ext}`);
+          console.log(targetSavedPath);
+
+          if (ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif') {
+               await fs.copy(imgTemporalPath, targetSavedPath)
+                         // .then(() => console.log('Success...!!!'))
+                         // .catch(err => console.error(err));
+               const url = 'http://localhost:3002/upload/'
+                         
+               const newImage = new Image({
+                              title: req.body.title,
+                              filename: url + imgUrl + ext,
+                              description: req.body.description
+                         }) 
+               // console.log(req.body);
+               const ImageSaved = await newImage.save()
+               console.log(newImage);
+               // 
+                     }else{
+               console.log('Nop..!!');
+               await fs.remove(imgTemporalPath)
+               res.status(500).json('Has a mistake')
+          }   
+          }
+        res.status(200).json('Works');
+  }
+ saveImage()
+  
 };
 ctrl.like = (req, res) => {
 	res.send('Like side');
 };
-
 ctrl.comment = (req, res) => {
 	res.send('Comment');
 };
@@ -48,5 +65,6 @@ ctrl.comment = (req, res) => {
 ctrl.remove = (req, res) => {
 	res.send('Deleted');
 };
+
 
 module.exports = ctrl;

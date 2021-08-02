@@ -4,7 +4,7 @@ const router = require('express').Router()
 const image = require('../controllers/image')
 
 module.exports = app => {
-     router.get('/', image.index)
+     router.get('/images', image.index)
 
      router.get('/images/:imageId', image.index)
 

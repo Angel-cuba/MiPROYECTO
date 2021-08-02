@@ -18,6 +18,6 @@ imageSchema.virtual('uniqueId')
 module.exports = mongoose.model('Image', imageSchema, 'imgs')
 
 
-// const Image = mongoose.model('Image', imageSchema, 'imgs')
+//  const ImageModel = mongoose.model('ImageModel', imageSchema, 'imgs')
 
-// module.exports = Image
+//  module.exports = ImageModel
