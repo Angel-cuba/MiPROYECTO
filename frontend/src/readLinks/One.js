@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import './../components/pages/css/one.css'
 import { NavLink } from '../components/Navbar/NavbarElements'
 
@@ -15,7 +15,9 @@ const One = (card) => {
 const { id }  = useParams()  
 const [ oneData, setoneData ] = useState([])
 
-const formikUpdate =  {
+//  const useHistory = useHistory()  
+
+const FormikUpdate =  {
   initialValues : initialValues,
   onSubmit: async(values )=> {
        await fetch(`${process.env.REACT_APP_BACKEND_URL}/update/${oneData.id}`,{
@@ -34,19 +36,22 @@ const formikUpdate =  {
 					throw Error(response.statusText);
 				}
                     else{
-                         response.json();
                          toast.configure()
-                    const registerOK = () => {
-                          toast.success('Your comment has being updated', {
+                         const registerOK = () => {
+                         toast.success('Your comment has being updated', {
                                autoClose: 3000
                           })
                          }     
+                          
                          registerOK()
-                          }
+                               }
+                          document.getElementById('btn_back').classList.add('btn_show')
                     			})
 			.catch((error) => {
 				console.log('Looks like there was an error: \n', error);
-			});
+			}); 
+               
+              
   },
   validationSchema: validateUpdate,
   validateOnChange: true,
@@ -64,7 +69,7 @@ const Links = async(setoneData) => {
 return (
      <>
      <div className="update_one">
-          <Formik {...formikUpdate}>
+          <Formik {...FormikUpdate}>
                {formik => (
           <div className="formik">     
           <div className="update_section">
@@ -75,13 +80,18 @@ return (
                          className="input_one"/>
                     <Input label="Description" name="description" placeholder={oneData.description} 
                          className="input_one"/>
-          
-                    <button type="submit" className="btn btn-block btn-success">
-                         <NavLink to="/eachUser">
-                              Update
-                         </NavLink>
+        
+                    {/* <button type="submit" className="btn btn-block btn-success">
+                     */}
+                    <button type="submit" className="update_btn">
+                              Update 
+                              {/* <NavLink to="/eachUser">
+                        </NavLink> */}
                     </button>
-                         
+                    <button id="btn_back" className="btn btn-block mt-3">
+                                        <NavLink to="/eachUser">Go back</NavLink>
+                                   </button>
+                          
                </Form>                        
           </div>                      
           </div>
