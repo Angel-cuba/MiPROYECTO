@@ -7,7 +7,7 @@ $laptop : 1024px;
 @mixin button_login_regiter() {
 	background-color: $clr-teal;
 	color: $clr-shadow-green;
-	margin: 1rem auto;
+     margin: 1rem auto;
 	padding: 1rem 2rem;
 	border: none;
 	outline: none;
@@ -21,7 +21,8 @@ $laptop : 1024px;
 @mixin button_add() {
 	background-color: $clr-olive-dark;
 	color: $clr-black-8;
-	margin: 1rem auto;
+	// margin: 1rem auto;
+	// margin-top: 5rem;
 	padding: 0.5rem 2rem;
 	border: none;
 	outline: none;

@@ -1,5 +1,6 @@
 .update_one {
   height: 100vh;
+  margin-top: 85px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,6 +18,7 @@
   display: -ms-flexbox;
   display: flex;
   padding: 1rem;
+  background-color: transparent;
 }
 
 .update_one .update_section {
@@ -33,37 +35,61 @@
   -ms-flex-line-pack: center;
       align-content: center;
   padding: 10rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 .update_one .update_section .input_one {
-  width: 90%;
+  width: 100%;
   margin: auto;
+  background-color: #808000;
 }
 
 .update_one .update_section .input_one::-webkit-input-placeholder {
   color: #F0FFFF;
-  padding: 1rem 0 1rem 3rem;
+  margin: 0;
 }
 
 .update_one .update_section .input_one:-ms-input-placeholder {
   color: #F0FFFF;
-  padding: 1rem 0 1rem 3rem;
+  margin: 0;
 }
 
 .update_one .update_section .input_one::-ms-input-placeholder {
   color: #F0FFFF;
-  padding: 1rem 0 1rem 3rem;
+  margin: 0;
 }
 
 .update_one .update_section .input_one::placeholder {
   color: #F0FFFF;
-  padding: 1rem 0 1rem 3rem;
+  margin: 0;
 }
 
 .update_one .update_section .update_btn {
+  width: 100%;
   background-color: #005050;
   outline: none;
   border: none;
-  margin: 1rem auto;
+  margin-top: .4rem;
+  border-radius: 3px;
+  color: #F0FFFF;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: unset;
+}
+
+.update_one .update_section .errorMessage {
+  background-color: transparent;
+  color: #aa2200;
+}
+
+.update_one .update_section .btn {
+  background-color: red;
+  display: none;
+}
+
+.update_one .update_section .btn_show {
+  display: block;
 }
 /*# sourceMappingURL=one.css.map */

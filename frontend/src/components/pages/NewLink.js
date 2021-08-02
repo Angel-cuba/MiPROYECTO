@@ -69,10 +69,9 @@ export const NewLinks = () => {
 							}}
 						/>
 					</div>
-
 					<button type="submit" className="btn_add" onClick={NewLink}>
 						Add new link
-					</button>
+					</button> 
 				</div>
 			</div>
 		</>
