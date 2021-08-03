@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Images } from './Images'
-
+import "../components/pages/css/blog.css"
 
 export const AllImages = () => {
      const [dataImages, setdataImages] = useState([])
@@ -25,15 +25,32 @@ export const AllImages = () => {
 
 return (
      <>
+     <div className="AllImages">
+          {/* {images} */}
+               {dataImages.map(i => (
+                    <div key={i._id} className="images">
+                         <div className="images_card">
+                              
+
+                              <div className="texto">
+                              <h1>{i.title}</h1>
+                              <h3>{i.description}</h3>
+                         </div>
+
+                              <div className="img">
+                              <img src={i.filename} alt=""/>
+                         </div>
+                            
+                    
+                         
+                         </div>
+                         
+                         
+                    </div>
+               ))}
+     </div>
      
-      {images}
-      {dataImages.map(i => (
-           <div key={i._id}>
-                <h3>{i.description}</h3>
-                <h1>{i.title}</h1>
-                <img src={i.filename} alt=""/>
-           </div>
-      ))}
+     
      
      </>
 )
