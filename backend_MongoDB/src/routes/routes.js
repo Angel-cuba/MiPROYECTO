@@ -14,7 +14,7 @@ module.exports = app => {
 
      router.post('/images/:imageId/comment', image.comment)
 
-     router.delete('/images/:imageId', image.remove)
+     router.get('/images/delete/:image_id', image.remove)
 
      app.use(router)
 

@@ -11,7 +11,9 @@
   "author": "Angel Luis",
   "license": "ISC",
   "dependencies": {
+    "cloudinary": "^1.26.3",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
