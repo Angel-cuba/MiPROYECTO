@@ -6,6 +6,8 @@ const errorhandler = require('errorhandler');
 const cors = require('cors');
 // const Upload  = require('./multer')
 
+const { time } = require('./helpers/libs');
+
 const routes = require('./routes/routes');
 
 //El setMaxListeners()
@@ -14,8 +16,8 @@ class MyEmitter extends EventEmitter {}
 const myEmitter = new MyEmitter();
 // increase the limit
 myEmitter.setMaxListeners(5);
-for(let i = 0; i < 5; i++) {
-  myEmitter.on('event', _ => console.log(i));
+for (let i = 0; i < 5; i++) {
+	myEmitter.on('event', (_) => console.log(i));
 }
 myEmitter.emit('event');
 
@@ -35,8 +37,18 @@ module.exports = (app) => {
 
 	//middlewares
 	app.use(morgan('dev'));
-	app.use(multer({ dest: path.join(__dirname, '../public/upload/temp') }).single('image'));
-	//  app.use(Upload)
+
+	//Configurar Multer
+	const ImageName = time();
+	const storage = multer.diskStorage({
+		destination: path.join(__dirname, 'public/upload'),
+		filename: (req, file, cb) => {
+			cb(null, ImageName + path.extname(file.originalname));
+		},
+	});
+	app.use(multer({ storage }).single('image'));
+	// app.use(multer({ dest: path.join(__dirname, '../public/upload/temp') }).single('image'));
+	
 	// Para recibir las imágenes que vienen del formulario
 	app.use(express.urlencoded({ extended: false }));
 	//para manejar likes en las fotos o comentarios
@@ -47,7 +59,7 @@ module.exports = (app) => {
 
 	//static files
 	// app.use('public', express.static(path.join(__dirname, '../public')));
-     app.use(express.static(`${__dirname}/public`))
+	app.use(express.static(`${__dirname}/public`));
 
 	//errorhandler
 	if ('development' === app.get('env')) {
