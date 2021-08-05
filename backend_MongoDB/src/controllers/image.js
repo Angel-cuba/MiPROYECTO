@@ -15,19 +15,15 @@ ctrl.index = async(req, res) => {
 ctrl.create =  (req, res) => { 
 
   const saveImage = async () => {
-          console.log(req.file)
           const imgUrl = randomName();
           const images = await Image.find({filename: imgUrl})
           //Chequea si está el nombre repetido
           if(images.length > 0){
                saveImage()
           }else{
-                 console.log(imgUrl);
           const imgTemporalPath = req.file.path;
-          console.log(imgTemporalPath);
           const ext = path.extname(req.file.originalname).toLocaleLowerCase();
           const targetSavedPath = path.resolve(`src/public/upload/${imgUrl}${ext}`);
-          console.log(targetSavedPath);
 
           if (ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif') {
                await fs.copy(imgTemporalPath, targetSavedPath)
@@ -43,10 +39,10 @@ ctrl.create =  (req, res) => {
                // console.log(req.body);
                const ImageSaved = await newImage.save()
                console.log(newImage);
-               // 
+                await fs.remove(imgTemporalPath)
                      }else{
                console.log('Nop..!!');
-               await fs.remove(imgTemporalPath)
+               
                res.status(500).json('Has a mistake')
           }   
           }
