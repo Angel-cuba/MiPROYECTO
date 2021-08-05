@@ -1,6 +1,6 @@
 const ctrl = {};
 const path = require('path');
-const { randomName } = require('../helpers/libs');
+const { randomName, time } = require('../helpers/libs');
 const fs = require('fs-extra');
 const { Image } = require('../models/index')
 
@@ -15,7 +15,7 @@ ctrl.index = async(req, res) => {
 ctrl.create =  (req, res) => { 
 
   const saveImage = async () => {
-          const imgUrl = randomName();
+          const imgUrl = time();
           const images = await Image.find({filename: imgUrl})
           //Chequea si está el nombre repetido
           if(images.length > 0){
