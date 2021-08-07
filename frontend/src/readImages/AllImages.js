@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import "../components/pages/css/blog.css"
+import { DeleteImage } from "../Small-Components/ImageDelete"
 
 export const AllImages = () => {
      const [dataImages, setdataImages] = useState([])
@@ -8,15 +9,19 @@ export const AllImages = () => {
       Image(setdataImages)
  }, [])
 
+
 return (
      <>
-     <div className="AllImages">
+     {
+          (dataImages.length) ? ( 
+           <div className="AllImages">
                {dataImages.map(image => (
                     <div key={image._id} className="images">
                          <div className="images_card">
                               
 
                               <div className="texto">
+                                   <p>{image._id}</p>
                               <h1>{image.title}</h1>
                               <h3>{image.description}</h3>
                          </div>
@@ -24,11 +29,18 @@ return (
                               <div className="img">
                               <img src={image.imageURL} alt=""/>
                          </div>
-
+                              <DeleteImage id={image._id}/>
+                         
                          </div>
+                         
+
                     </div>
                ))}
      </div>
+     ) 
+          : 
+          null
+     }
      </>
 )
 }

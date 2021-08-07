@@ -14,3 +14,4 @@ export const NewImage = () => {
         </>
    )
 }
+// regex = “([^\\s]+(\\.(?i)(jpe?g|png|gif|bmp))$)”; 

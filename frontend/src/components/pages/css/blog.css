@@ -113,7 +113,7 @@ form {
 .AllImages .images .images_card {
   padding: .7rem;
   background-color: transparent;
-  margin: .2rem;
+  margin: auto;
 }
 
 .AllImages .images .images_card .texto {
@@ -137,5 +137,31 @@ form {
 .AllImages .images .images_card .img img {
   width: 100%;
   border-radius: 5px;
+}
+
+.AllImages .btn_D {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+  background-color: transparent;
+}
+
+.AllImages .btn_D .btn_delete {
+  background-color: #d32323;
+  color: #E6E6FA;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 4.5px;
+}
+
+.AllImages .btn_D .btn_delete:hover {
+  background-color: #aa2200;
+  color: black;
+  font-weight: 500;
 }
 /*# sourceMappingURL=blog.css.map */

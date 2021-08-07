@@ -23,7 +23,7 @@ const Blog = () => {
       formData.append('description', description)
 
     
-     await fetch('http://localhost:3002/images',{
+     await fetch(`${process.env.REACT_APP_BACKEND_MONGODB_URL}`,{
                method: 'POST',
                body: formData,
                headers: {
@@ -42,7 +42,6 @@ const Blog = () => {
      return (
           <div className="blog">
                     <form onSubmit={NewImage}>
-                    {/* <form action={`${process.env.REACT_APP_BACKEND_MONGODB_URL}`} method="POST"  encType="multipart/form-data"> */}
                              <div className="form">
                                   <div className="image">
                               <label htmlFor="image">                                                                  Choose file </label>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import './../components/pages/css/one.css'
 import { NavLink } from '../components/Navbar/NavbarElements'
 
