@@ -17,7 +17,7 @@ router.post("/login", async (req, res) => {
         code: 400, 
         message: "Fields can't be empty",
         err: err
-      });   
+      });    
     } else { 
       if (results.length>0) { 
         const encryptedPasswordFromDB = results[0].pass;
