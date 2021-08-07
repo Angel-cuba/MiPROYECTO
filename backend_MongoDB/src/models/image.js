@@ -3,6 +3,7 @@ const  Schema  = mongoose.Schema
 const path = require('path')
 
 const imageSchema = new Schema({
+    // id: {type: String},
     title : {type: String},
     imageURL : {type: String},
     description : {type: String},
