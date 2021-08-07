@@ -102,11 +102,12 @@ form {
       justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  background-color: transparent;
 }
 
 .AllImages .images {
-  background-color: rgba(0, 0, 0, 0.02127);
-  margin-top: 1rem;
+  background-color: rgba(0, 0, 0, 0.12127);
+  margin: 1rem;
   border-radius: 1rem;
 }
 

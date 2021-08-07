@@ -7,12 +7,13 @@ export const DeleteImage = (image) =>{
       })
       .then(response => response.json())
       .catch(error =>console.log(error))
+      console.log(_id)
       window.location.reload()
       }
       return(
                <>
                  <div className="btn_D">
-                              <button type="submit" onClick={()=> deleteImg(image._id)} className="btn_delete">Delete</button>
+                              <button type="submit" onClick={()=> deleteImg(image._id)} className="btn_delete">Delete😕</button>
                          </div>
                </>
       )

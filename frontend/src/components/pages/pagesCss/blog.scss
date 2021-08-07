@@ -69,12 +69,12 @@ form{
      display: flex;
      justify-content: space-around;
      flex-wrap: wrap;
-	
+	background-color: transparent;
 
   
 .images{
-     background-color: rgba(0, 0, 0, 0.02127);
-     margin-top: 1rem;
+     background-color: rgba(0, 0, 0, 0.12127);
+     margin: 1rem;
      border-radius: 1rem;
      .images_card{
           padding: .7rem;

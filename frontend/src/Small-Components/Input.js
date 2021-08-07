@@ -6,8 +6,8 @@ const Input = ({
      type = 'text',
      ...props
 }) => {
-     const [ field, meta, helpers ] = useField(props)
-     //console.log(field, meta)
+     const [ field] = useField(props)
+     //console.log(field, meta), meta, helpers 
      return (
           < >
                <label className="label" htmlFor={field.name}>{label}</label>

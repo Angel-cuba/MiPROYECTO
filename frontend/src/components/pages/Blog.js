@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import './css/blog.css';
 import { AllImages } from '../../readImages/AllImages'
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
  
 const Blog = () => {
 
@@ -14,7 +18,14 @@ const Blog = () => {
  }
  const NewImage = async (e) => {
       e.preventDefault();
-
+           toast.configure();
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+const Warning = () => {
+				toast.info('Uploading images', {
+					position: toast.POSITION.TOP_CENTER,
+					autoClose: 3000
+				})
+			}
      
       const formData = new FormData()
 
@@ -35,7 +46,7 @@ const Blog = () => {
           
           console.log(resImg)
      }).catch(error => {console.log(error)})
-
+     await delay(Warning(),5000);
      window.location.reload()
  }
 
