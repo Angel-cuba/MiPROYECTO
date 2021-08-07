@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const {database}  =require('../keytoserver/keys')
-require('dotenv').config()
 
 mongoose.connect(database.URI, { 
      useNewUrlParser : true,
