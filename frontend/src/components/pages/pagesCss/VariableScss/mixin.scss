@@ -60,7 +60,38 @@ $laptop : 1024px;
 		font-weight: 600;
 	}
 }
+@mixin btn_closeImageModal {
+
+	background-color: $youtube;
+	color: $clr-black-9;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	text-align: center;
+	&:hover {
+		background-color: $clr-black-8;
+		color: $clr-snow;
+		font-weight: 500;
+	}
+}
+@mixin btn_openImageModal {
+	background-color: $clr-yellow-green;
+	color: $clr-black-9;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	text-align: center;
+	margin: 1rem auto;
+	&:hover {
+		background-color: $clr-yellow;
+		color: $clr-brown;
+		font-weight: 500;
+			}
+}
+
 
 @mixin title() {
 	font-size: 18px;
+	font-weight: 900;
+	color: $clr-sienna;
 }

@@ -42,7 +42,7 @@ return (
      </div>
      ) 
           : 
-          null
+          <h1>Sorry, there is nothing to show</h1>
      }
      </>
 )
