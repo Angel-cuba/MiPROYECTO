@@ -1,5 +1,4 @@
 import React, { useState }from 'react'
-import { InputRegister } from '../../Small-Components/InputRegister'
 import './css/blog.css'
 
 import { toast } from 'react-toastify';
