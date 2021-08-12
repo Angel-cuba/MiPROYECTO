@@ -5,7 +5,7 @@ import '../pages/css/register.css';
 import { Formik, Form } from 'formik'
 import Input from '../../Small-Components/Input'
 
-import { formikRegister } from '../../lib/formikRegister'
+import { formikRegister } from '../../lib/FormikRegister'
 
 
 const UserRegister = () => {

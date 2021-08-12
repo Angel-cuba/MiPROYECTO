@@ -8,7 +8,7 @@ import Input from '../../Small-Components/Input'
 import { FormikLink } from '../../lib/FormikLink';
 
 
-const NewLinks = () => {
+export const NewLinks = () => {
 	// const [title, setTitle] = useState('');
 	// const [url, setUrl] = useState('');
 	// const [description, setDescription] = useState('');
@@ -109,4 +109,4 @@ const NewLinks = () => {
 	)
 }
 
-export default NewLinks
+// export default NewLinks

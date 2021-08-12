@@ -9,6 +9,8 @@ import { NavLink } from '../../components/Navbar/NavbarElements';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import Input from '../../Small-Components/Input'
+
 const Login = () => {
 	toast.configure();
 

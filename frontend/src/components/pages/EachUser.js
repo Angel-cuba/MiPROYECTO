@@ -1,5 +1,5 @@
 import React from 'react'
-import { NewLinks } from './NewLink'
+import {NewLinks} from './NewLink'
 import { All } from '../../readLinks/All'
 import './css/eachUser.css'
 

@@ -11,7 +11,7 @@ import Home from './components/pages/Home'
 import { AuthContext } from './lib/auth/auth.context'
 import EachUser from './components/pages/EachUser'
 import UserRegister from './components/pages/UserRegister'
-import One from './readLinks/One';
+import OneLink from './readLinks/OneLink';
 
  
 function App() {
@@ -40,7 +40,7 @@ const [ auth, setAuth] = useState(
       <Route path="/userRegister"><UserRegister /></Route>
       <Route path="/about"><About/> </Route>
       <Route path="/eachUser"><EachUser/> </Route>
-      <Route path="/one/:id"><One/></Route>
+      <Route path="/onelink/:id"><OneLink/></Route>
       <Route path="/" exact><Home/></Route>
    
     </Switch>
