@@ -42,7 +42,16 @@ return (
      </div>
      ) 
           : 
-          <h1>Sorry, there is nothing to show</h1>
+
+         (
+               <div class="nothing-to-show">
+                    <div className="content">
+                         <h1>Sorry, <br/> there is nothing to show<br/>😫</h1>
+                    </div>
+               
+          </div>
+          )
+ 
      }
      </>
 )
