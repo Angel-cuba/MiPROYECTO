@@ -132,25 +132,27 @@ label {
 	flex-direction: column;
 	justify-content: space-around;
 	margin: auto;
-}
-.btn_login {
-	@include button_login_regiter();
-	
-}
-input {
+	input {
 	background-color: rgba(238, 223, 223, 0.384);
 	outline: none;
 	border: none;
 	border-radius: 5px;
 	height: 40px;
-	padding: 0.5rem;
+	padding: 0.575rem;
      &:focus{
-          color: rgb(59, 41, 41);
+		background-color: rgba(129, 97, 125, 0.349);
+          color: rgb(247, 242, 242);
      }
      &::placeholder{
           color: rgb(195, 188, 188);
      }
 }
+}
+.btn_login {
+	@include button_login_regiter();
+	
+}
+
 
 @media screen and (max-width: $movil){
 	.login_page {
