@@ -23,9 +23,9 @@ const Login = () => {
 
 	const login = (e, setAuth) => {
 		e.preventDefault();
-		if(!userEmail || !userPassword){
+		if(userEmail === '' || userPassword === '') {
 			const toastWarning = () => {
-				toast.info('Something is missing', {
+				toast.info('All fields are required 🤔', {
 					position: toast.POSITION.TOP_CENTER,
 					autoClose: 3000
 				})
@@ -33,12 +33,32 @@ const Login = () => {
 			toastWarning()
 			
 		}
-
+		var EmailRegex = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i
+		if(userEmail.length && !userEmail.match(EmailRegex)){
+			const toastEmail = () => {
+				toast.dark('Invalid email address: '+ userEmail +'     🥱' , {
+					position: toast.POSITION.BOTTOM_CENTER,
+					autoClose: 3000
+				})
+			}
+			toastEmail()
+		}
+		else{
+				
 		Axios.post(`${process.env.REACT_APP_API_USER}/login`, {
 			email: userEmail,
 			pass: userPassword,
 		})
 			.then((response) => {
+				if(!response.data){
+					const toastWarning = () => {
+						toast.warning('Something is wrong', {
+							position: toast.POSITION.TOP_CENTER,
+							autoClose: 3000
+						})
+					}
+					toastWarning()
+				}
 				if (response.data.token) {
 					const name = (response.data.userDB[0].first_name).toUpperCase()
 					const toastFx = () => {
@@ -54,12 +74,34 @@ const Login = () => {
 				}
 			})
 			.catch((error) => {
-				const toastError = () => {
-					toast.error(`${error.response.data}`)
+				
+				console.log('Este es el error : ', error.response.data);
+				if(error.response === undefined){
+					const toastError1 = () => {
+					toast.warning('Something is wrong')
 				}
-				console.log('Este es el error : ', error.response);
-				if(error) toastError();
-			});
+					
+					
+					 toastError1()};
+
+				
+				if(!error.response){
+					
+					const toastError = () => {
+							toast.error('Algo salió mal')
+							}
+					 toastError()
+					 };
+				if(error.response.data){
+					const R = () => {
+						toast.error( error.response.data)
+					}
+					R();
+				}
+			// window.location.reload()	
+			}) 		
+		}
+
 	};
 
 	return (
@@ -70,7 +112,7 @@ const Login = () => {
 					<div className="email">
 						<label>Username</label>
 						<input
-							type="text"
+							type="email"
 							id="email"
 							placeholder="Email address"
 							onChange={(e) => {
