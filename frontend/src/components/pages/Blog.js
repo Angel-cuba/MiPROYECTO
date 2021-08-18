@@ -25,8 +25,7 @@ const Blog = () => {
                 
                <button className="btn-open-modal" onClick={()=> setOpen(true)}>New Image</button>
                {Open && <NewImage closeNewImageForm={setOpen}/>}
-                     <label for="Images"></label>
-                    <input className="findImginput" type="text" placeholder="Find yours images....."
+                    <input type="text" placeholder="Find yours images....."
                     onChange={(event) => setSearch(event.target.value)}/>
                     <AllImages dataImages={dataImages} search={search}/>
           </div>
