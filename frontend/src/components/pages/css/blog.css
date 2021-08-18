@@ -15,6 +15,39 @@
   margin-top: 85px;
 }
 
+.blog input {
+  border: none;
+  outline: none;
+  padding: .49rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+}
+
+.blog input::-webkit-input-placeholder {
+  color: #B8860B;
+  font-weight: bold;
+}
+
+.blog input:-ms-input-placeholder {
+  color: #B8860B;
+  font-weight: bold;
+}
+
+.blog input::-ms-input-placeholder {
+  color: #B8860B;
+  font-weight: bold;
+}
+
+.blog input::placeholder {
+  color: #B8860B;
+  font-weight: bold;
+}
+
+.blog input:focus {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #DAA520;
+}
+
 .btn-open-modal {
   background-color: #9ACD32;
   color: rgba(0, 0, 0, 0.9);
@@ -142,7 +175,7 @@ form {
 }
 
 .AllImages {
-  height: calc(100% - 115px);
+  min-height: calc(100vh - 143px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -2,7 +2,6 @@ import "../components/pages/css/blog.css"
 import { Images } from "./Images";
 
 export const AllImages = ({dataImages, search}) => {
-   console.log(search)
   const FilterImages = dataImages.filter((image) => image.title.toLowerCase().includes(search.toLowerCase()))
 return (
      <>

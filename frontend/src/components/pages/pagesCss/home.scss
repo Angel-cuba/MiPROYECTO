@@ -4,18 +4,35 @@
 /* Home page */
 .home {
 	// width: 90%;
-	margin-top: 85px;
+
 	width: 100%;
-	height: 100vh;
+	 height: 100vh;   
+	color: $clr-gold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 }
 .home_content {
-	background-color: rgba(0, 0, 0, 0.041);
 	width: 90%;
-	padding: 1rem;
-	margin: auto;
-	border-radius: 6px;
-}
-.home_content h1,
-.home_content p {
+	height: calc(100vh - 143px);
 	background-color: transparent;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+	align-content: center;
+
+ h1{
+	text-shadow: 1px 1px 10px $clr-black-1;
+	background-color: transparent;
+	text-align: center;
+}
+p{
+	width: calc(80% - 10vh);
+	text-align: center;
+	background-color: transparent;
+	text-shadow: 1px 1px 10px $clr-white-antique;
+}
 }

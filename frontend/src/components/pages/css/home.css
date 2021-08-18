@@ -1,20 +1,50 @@
 /* Home page */
 .home {
-  margin-top: 85px;
   width: 100%;
   height: 100vh;
+  color: #FFD700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .home_content {
-  background-color: rgba(0, 0, 0, 0.041);
   width: 90%;
+  height: calc(100vh - 143px);
+  background-color: transparent;
   padding: 1rem;
-  margin: auto;
-  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
-.home_content h1,
-.home_content p {
+.home_content h1 {
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   background-color: transparent;
+  text-align: center;
+}
+
+.home_content p {
+  width: calc(80% - 10vh);
+  text-align: center;
+  background-color: transparent;
+  text-shadow: 1px 1px 10px #FAEBD7;
 }
 /*# sourceMappingURL=home.css.map */

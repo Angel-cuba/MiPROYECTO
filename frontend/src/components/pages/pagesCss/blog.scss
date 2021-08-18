@@ -2,15 +2,26 @@
 @import "../pagesCss/VariableScss/mixin.scss";
 
 .blog {
-      display: flex;
-      justify-content: center;
-        align-items: center;
-        flex-direction: column;
-     //    height: calc(100vh - 85px);
-     //    height: 100vh;
-     //    color: rgba(13, 14, 11, 0.924);
-     // background-color: red;
-        margin-top: 85px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     margin-top: 85px;
+  input{
+       border: none;
+       outline: none;
+       padding: .49rem;
+       background-color: $clr-black-7;
+       border-radius: 5px;
+       &::placeholder{
+            color: $clr-olive-gold;
+            font-weight: bold;
+       }
+       &:focus{
+            background-color: $clr-black-8;
+            color: $clr-olive-golden;
+       }
+  }
 }
   .btn-open-modal{
        @include btn_openImageModal();
@@ -62,17 +73,12 @@ form{
        .upload{
           background-color: rgba(0, 0, 0, 0.192);
           margin: 0;
-	     // fill: $clr-silver-gain;
           width: 100%;
-               height: 100%;
-         
+          height: 100%;
 			&:hover{
 				fill : $yelp;
 				cursor: pointer;
 		          background-color: $clr-black-5;
-               //    .bi{
-               //         background-color: $clr-black-5;
-               //    }
 			}
        }
           h5{
@@ -80,11 +86,10 @@ form{
                color: $clr-coral;
                margin-left: .2em;
           } 
-
      }
 }
 .AllImages{
-     height: calc(100% - 115px);
+     min-height: calc(100vh - 143px);
      display: flex;
      justify-content: space-around;
      flex-wrap: wrap;

@@ -8,8 +8,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: calc(100vh - 85px);
+  height: 100vh;
   color: rgba(174, 209, 16, 0.924);
   margin-top: 85px;
+}
+
+.pages h1 {
+  background-color: transparent;
 }
 /*# sourceMappingURL=about.css.map */
