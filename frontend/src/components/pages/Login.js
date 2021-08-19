@@ -30,7 +30,9 @@ const Login = () => {
 					autoClose: 3000
 				})
 			}
-			toastWarning()
+		       return(
+				   toastWarning()
+				   )
 			
 		}
 		var EmailRegex = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i
@@ -41,7 +43,7 @@ const Login = () => {
 					autoClose: 3000
 				})
 			}
-			toastEmail()
+			return  toastEmail()
 		}
 		else{
 				
@@ -75,29 +77,31 @@ const Login = () => {
 			})
 			.catch((error) => {
 				
-				console.log('Este es el error : ', error.response.data);
+				// console.log('Este es el error : ', error.response.data);
+				const info1 = <p className="bg-danger text-light text-center">Im so sorry but we have server problems...☹</p>
 				if(error.response === undefined){
 					const toastError1 = () => {
-					toast.warning('Something is wrong')
+					toast.dark(info1)
 				}
-					
-					
-					 toastError1()};
-
+					return toastError1()
+					}
 				
 				if(!error.response){
-					
+					const info2 = <p className="bg-danger text-light text-center">Seems like something went wrong. Please try again</p>
 					const toastError = () => {
-							toast.error('Algo salió mal')
+							toast.error(info2)
 							}
-					 toastError()
+					return toastError()
 					 };
-				if(error.response.data){
-					const R = () => {
-						toast.error( error.response.data)
+					if(!error.response.data){
+						
+					return null
+					}else{
+						const R = () => {
+							toast.error( error.response.data)
+						}
+						R();
 					}
-					R();
-				}
 			// window.location.reload()	
 			}) 		
 		}
