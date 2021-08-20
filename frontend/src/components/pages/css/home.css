@@ -42,7 +42,7 @@
 }
 
 .home_content p {
-  width: calc(80% - 10vh);
+  width: calc(80% - 1vh);
   text-align: center;
   background-color: transparent;
   text-shadow: 1px 1px 10px #FAEBD7;

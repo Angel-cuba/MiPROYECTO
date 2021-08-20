@@ -33,10 +33,23 @@
 	input {
 		margin: 1em auto;
 		width: 70%;
+		border: none;
+		outline: none;
+		padding: .6rem;
+		border-radius: .3rem;
+		background-color: $clr-black-7;
+		font-size: 1.13rem;
+		font-family: 'Indians';
+		font-weight: 900;
+		letter-spacing: 1px;
 		&::placeholder{
 			color: $clr-olive-1;
 			background-color: transparent;
 			}
+		&:hover{
+			background-color: $clr-black-6;
+			color: $clr-light-yellow;
+		}
 		}
 	label {
 		padding: 0.37em 1em;

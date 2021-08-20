@@ -25,13 +25,13 @@ const Blog = () => {
                 
                <button className="btn-open-modal" onClick={()=> setOpen(true)}>New Image</button>
                {Open && <NewImage closeNewImageForm={setOpen}/>}
-                    <input type="text" placeholder="Find yours images....."
+
+                    <input type="text" name="search" placeholder="Find yours images....."
                     onChange={(event) => setSearch(event.target.value)}/>
                     <AllImages dataImages={dataImages} search={search}/>
           </div>
      )
 }
-
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const Image = async(setdataImages) => {
@@ -40,13 +40,13 @@ const Image = async(setdataImages) => {
  const data = await response.json()
  console.log(data)
  const Warning = () => {
- 				toast.info('Time of responses', {
+ 				toast.info('All yours cards 😎', {
 					position: toast.POSITION.TOP_CENTER,
  					autoClose: 1000
  				})
 			}
  await delay(Warning(),4000);
- console.log('Now.....!')
+ console.log('Now....!')
  setdataImages(data)
  
 }

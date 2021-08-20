@@ -40,6 +40,15 @@
 .form .form_card input {
   margin: 1em auto;
   width: 70%;
+  border: none;
+  outline: none;
+  padding: .6rem;
+  border-radius: .3rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 1.13rem;
+  font-family: 'Indians';
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 
 .form .form_card input::-webkit-input-placeholder {
@@ -60,6 +69,11 @@
 .form .form_card input::placeholder {
   color: #BDB76B;
   background-color: transparent;
+}
+
+.form .form_card input:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #FFFFE0;
 }
 
 .form .form_card label {

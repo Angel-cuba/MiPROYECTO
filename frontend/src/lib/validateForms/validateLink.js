@@ -10,7 +10,7 @@ export const validateLink = yup.object().shape({
                     .required('This field is required'),
      description : yup.string()
                     .min(10, 'Plzz, try to give something to show...')
-                    .max(20, 'Upss, seems like is too much')
+                    .max(30, 'Upss, seems like is too much')
                     .required('This field is required')
                
 })
