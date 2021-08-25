@@ -1,12 +1,16 @@
 import ButtonDelete from '../Small-Components/ButtonDelete'
 import ButtonEdit from '../Small-Components/ButtonEdit'
 import * as timeago from 'timeago.js'
+import TimeAgo from 'react-timeago'
 
-
-const MyLinks = (card) => {
+const MyLinks = ({card}) => {
      
   const mytimeago = timeago.format(`${card.created_at}`);
  //  timeago.render(document.querySelectorAll('.demo'))
+  const react_time = new Date(`${card.created_at}`)
+
+  const created_at = Date(Date.now());
+console.log(created_at)
 
      return (
           <>
@@ -24,6 +28,10 @@ const MyLinks = (card) => {
                     <div className="mytimeago">
                          {mytimeago}
                     </div>
+                    <div className="">
+                         <TimeAgo date={react_time}/>
+                    </div>
+                    {/* <p>{card.created_at}</p> */}
 
                     <div className="button">
                               <ButtonDelete id={card.id}/>
