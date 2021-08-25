@@ -6,8 +6,7 @@ import MyLinks from './MyLinks'
 
 export const All = () => {
    const [ dataCards, setdataCards ] = useState([])
-       //testing timeago
-
+   console.log(dataCards)
   useEffect( () =>{
        Links(setdataCards)
        },[])
@@ -15,22 +14,13 @@ export const All = () => {
  
   let cards 
   if (dataCards.length) {
-       cards = dataCards.map(card => (
-            <MyLinks
-            key={card.id}
-             id = {card.id}
-             title={card.title}
-             url={card.url}
-             description = {card.description}
-          created_at={card.created_at}
-            />
-       ))
+       cards = dataCards.map((card, id)=> (<MyLinks card={card} key={id}/>))
   }
 
      return (
           <>
                <div className="all">
-                    {cards ? cards : <span>Sorry, there are sever problems..............</span>}   
+                    {cards ? cards: <span>Sorry, there are sever problems..............</span>}   
                </div>
           </>
      )
