@@ -1,5 +1,6 @@
 @import '../pagesCss/VariableScss/variables.scss';
 @import '../pagesCss/VariableScss/mixin.scss';
+// @import '@sweetalert2/theme-dark/dark.scss';
 
 .form {
 	background-color: rgba(226, 237, 238, 0.431);
@@ -69,4 +70,21 @@
 
 .btn_add {
 	@include button_add();
+}
+//Editando el SWAL2
+h2{
+	background-color: transparent;
+p{	
+	width: 100%;
+	background-color: transparent;
+	color: #db6041;
+}}
+.swal2-actions {
+	background-color: transparent;
+}
+.swal2-footer {
+	background-color: transparent;
+	p{
+		background-color: transparent;
+	}
 }

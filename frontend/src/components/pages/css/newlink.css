@@ -104,4 +104,26 @@
   color: #FFFAFA;
   font-weight: 600;
 }
+
+h2 {
+  background-color: transparent;
+}
+
+h2 p {
+  width: 100%;
+  background-color: transparent;
+  color: #db6041;
+}
+
+.swal2-actions {
+  background-color: transparent;
+}
+
+.swal2-footer {
+  background-color: transparent;
+}
+
+.swal2-footer p {
+  background-color: transparent;
+}
 /*# sourceMappingURL=newlink.css.map */
