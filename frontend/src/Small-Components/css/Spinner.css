@@ -1,0 +1,142 @@
+.downspinner {
+  width: 500px;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.downspinner::before {
+  content: "";
+  position: absolute;
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  bottom: 10px;
+  left: 10px;
+  border-radius: 50%;
+}
+
+.downspinner::after {
+  content: "";
+  position: absolute;
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+}
+
+.downspinner .outside {
+  background-color: black;
+  width: 80%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.downspinner .outside::before {
+  content: "";
+  position: absolute;
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+}
+
+.downspinner .outside::after {
+  content: "";
+  position: absolute;
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 50%;
+}
+
+.downspinner .outside .inside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: red;
+  width: 80%;
+  height: 80%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.downspinner .outside .inside::before {
+  content: "";
+  position: absolute;
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+}
+
+.downspinner .outside .inside::after {
+  content: "";
+  position: absolute;
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 50%;
+}
+
+.downspinner .outside .inside .small {
+  background-color: green;
+  width: 80%;
+  height: 80%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.downspinner .outside .inside .small::before {
+  content: "";
+  position: absolute;
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+}
+
+.downspinner .outside .inside .small::after {
+  content: "";
+  position: absolute;
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=Spinner.css.map */
