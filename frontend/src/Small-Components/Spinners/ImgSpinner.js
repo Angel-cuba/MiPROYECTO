@@ -1,4 +1,5 @@
 import React from 'react'
+import "../../Small-Components/css/DownSpinner.css"
 
 export const ImgSpinner = () => {
      return (

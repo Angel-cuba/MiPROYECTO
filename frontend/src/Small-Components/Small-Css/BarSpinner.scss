@@ -1,0 +1,62 @@
+.bars{
+     position: absolute;
+     top: 55%;
+     left: 45%;
+     // width: 100px;
+     // height: 100px;
+     background-color: transparent;
+     .eachbar{
+          width: 10px;
+          height: 70px;
+          background-color: #07331f;
+          background-image: linear-gradient(45deg, rgba(7, 51, 31,.5) 0%, #3eadcf 74%);
+          display: inline-block;
+          margin-right: 3px;
+          transform-origin: bottom center;
+          border-top-left-radius: 20px;
+         border-top-right-radius: 20px;
+          animation: loader 1.052s linear infinite;
+          box-shadow: 1px 0 0 10px rgba(238, 255, 253, 0.15);
+     }
+     .bar1{
+          animation-delay: 0.1s;
+     }
+      .bar2{
+          animation-delay: 0.2s;
+     }
+      .bar3{
+          animation-delay: 0.3s;
+     } 
+     .bar4{
+          animation-delay: 0.4s;
+     }
+     .bar5{
+          animation-delay: 0.5s;
+     }
+      .bar6{
+          animation-delay: 0.6s;
+     }
+      .bar7{
+          animation-delay: 0.7s;
+     }
+      .bar8{
+          animation-delay: 0.8s;
+     }
+      .bar9{
+          animation-delay: 0.9s;
+     }
+}
+@keyframes loader {
+     0%{
+          transform: scaleY(0.1);
+     }
+     50%{
+          transform: scaleY(1);
+          background-color: #166d3b;
+          background-image: linear-gradient(147deg, #166d3b 30%, rgba(0, 0, 0, .89) 94%);
+     }
+     100%{
+          transform: scaleY(0.1);
+          background: transparent;
+     }
+}
