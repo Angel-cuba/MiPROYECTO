@@ -1,0 +1,49 @@
+.balls{
+     position: absolute;
+     // width: 200px;
+     // height: 200px;
+     background-color: transparent;
+     bottom: 10rem;
+.small-ball{
+     width: 20px;
+     height: 20px;
+     background-color: #abe9cd;
+     background-image: linear-gradient(35deg, #abe9cd 0%, #3eadcf 74%);
+     display: inline-block;
+     margin: .4rem;
+     border-radius: 50%;
+     box-shadow: 1px 13px 20px 5px rgba(83, 120, 149,.4);
+     animation: ball-spin 2s linear infinite;
+}
+.ball-1{
+     animation-delay: .1s;
+}
+.ball-2{
+     animation-delay: .23s;
+}
+.ball-3{
+     animation-delay: .37s;
+}
+.ball-4{
+     animation-delay: .51s;
+}
+.ball-5{
+     animation-delay: .591s;
+}
+.ball-6{
+     animation-delay: .7s;
+}
+}
+
+
+@keyframes ball-spin {
+     0%{
+          transform: scale(0.1);
+     }
+     50%{
+         transform: scale(1)
+     }
+     100%{
+          transform: scale(0.2)
+     }
+}
