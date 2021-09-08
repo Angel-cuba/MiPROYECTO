@@ -8,24 +8,11 @@
 	/* background-image: linear-gradient(315deg, #100d25 50%, #775858 74%);  */
 }
 
-@keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
 .MyLinks {
 	background-color: rgba(15, 12, 12, 0.0201);
 	width: fit-content;
-	/* gap: 1em; */
 	margin-top: 1em;
-
-	/* display: flex;
- justify-content: space-between; */
 	border-radius: 10px;
-	/* margin: auto; */
 }
 .classCard {
 	background-color: rgba(45, 73, 44, 0.246);
@@ -50,28 +37,10 @@
 	justify-content: space-between;
 	background-color: transparent;
 }
-.all {
-	background-color: transparent;
-	display: flex;
-	/* width: fit-content; */
-	justify-content: space-around;
-	margin: auto;
-	flex-wrap: wrap;
-	font-family: Elephant;
-	/* font-weight: 900; */
-}
-span {
-	background-color: rgba(8, 226, 226, 0.267);
-	padding: 0.5em;
-	margin: auto;
-	border: 2px solid rgba(8, 226, 226, 0.267);
-	/* border */
-	border-radius: 50% 20%/10% 30%;
-}
 .mytimeago {
 	width: fit-content;
 	background-color: rgba(128, 128, 128, 0.062);
-	margin: 0.53rem auto;
+	margin: auto;
 	padding: 1rem;
 	outline: 2px solid rgb(223, 210, 210);
 	background-color: #2f4353;

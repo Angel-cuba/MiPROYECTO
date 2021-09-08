@@ -9,4 +9,36 @@
 .contenido {
   margin-top: 85px;
 }
+
+.all {
+  width: 100%;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: Elephant;
+}
+
+.all .span {
+  background-color: rgba(8, 226, 226, 0.01267);
+  padding: 0.75em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  letter-spacing: 2px;
+}
+
+.all .span p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  background-color: transparent;
+}
 /*# sourceMappingURL=eachUser.css.map */
