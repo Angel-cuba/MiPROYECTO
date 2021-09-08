@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react"
 import MyLinks from './MyLinks'
-
-
+import { SmallSpinner } from "../Small-Components/Spinners/SmallSpinner"
+import "../components/pages/css/eachUser.css"
+import Axios from 'axios'
 
 
 export const All = () => {
    const [ dataCards, setdataCards ] = useState([])
    console.log(dataCards)
   useEffect( () =>{
+       userAuth()
        Links(setdataCards)
        },[])
 
@@ -20,7 +22,8 @@ export const All = () => {
      return (
           <>
                <div className="all">
-                    {cards ? cards: <span>Sorry, there are sever problems..............</span>}   
+                    {cards ? cards: <article className="span"><p>Sorry, seems like you have some server problems</p> <SmallSpinner/> </article>}  
+                    
                </div>
           </>
      )
@@ -37,5 +40,15 @@ const Links = async(setdataCards) => {
      setdataCards(data)
 }
 
+	const userAuth = () => {
+  Axios.get(`${process.env.REACT_APP_API_USER}/isAuthenticated`,{
+    headers: {
+      "Content-Type" : "application/json",
+      "access-token": localStorage.getItem("jwt")
+    }
+  }).then( response => console.log(response.data))
+    .catch( error => console.log(error))
+
+}
 
 
