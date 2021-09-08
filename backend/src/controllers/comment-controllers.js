@@ -27,12 +27,15 @@ commentCtrl.getByIdComment = async (req, res) => {
 
 commentCtrl.newComment= async (req, res) => {
      const { title, url, description} = req.body
+     const checkEmail = req.userEmail
+ 
+//     let sqlQuery = `SELECT * FROM users WHERE email = ?`
 
      const newComment = {
           title,
           url,
           description,
-          // user_id: req.user.id 
+          user_id: checkEmail
           
      }  
 
