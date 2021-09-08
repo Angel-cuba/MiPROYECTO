@@ -39,6 +39,8 @@ userCtrl.newUser = async(req, res) => {
     })
 }
 
+
+
 userCtrl.getOneUser = async (req, res) => {
      const { id } = req.params
      let sqlQuery = `SELECT * FROM users WHERE id = ${id}`
@@ -46,13 +48,23 @@ userCtrl.getOneUser = async (req, res) => {
       if (isNaN(id)) {
         return res.json('You must enter a valid id as a parameter');
     }
-
+   
+  
     await dbConnection.query(sqlQuery, [id], (err, result) => {
          if (err) throw err
          res.status(200).json(result)
     })
 }
 
+userCtrl.authorizationUser = async (req, res) => {
+     try {
+           res.json('Authentication request Ok')
+     } catch (error) {
+         console.log(error) 
+     }
+   
+    
+}
 userCtrl.updateUser = (req, res) => {
      res.json('Update')
 }
@@ -62,4 +74,4 @@ userCtrl.deleteUser = (req, res) => {
 }
 
 
-module.exports = userCtrl;
+module.exports = userCtrl; 
