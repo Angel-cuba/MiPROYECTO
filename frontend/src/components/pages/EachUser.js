@@ -9,15 +9,14 @@ import Axios from 'axios'
 
  const EachUser = () => {
 
-useEffect(() => {
-      userAuth()   
-}, [])
+// useEffect(() => {
+//       userAuth()   
+// }, [])
            return (
         <>
           <div className="each">
                     <div className="contenido">
                           <h1>Cada user viene aqui</h1>
-                          <button onClick={() => userAuth()}>send</button>
         
                <NewLinks />
                 <All /> 
@@ -30,16 +29,16 @@ useEffect(() => {
           </>
      )
 }
-	const userAuth = () => {
-  Axios.get(`${process.env.REACT_APP_API_USER}/isAuthenticated`,{
-    headers: {
-      "Content-Type" : "application/json",
-      "access-token": localStorage.getItem("jwt")
-    }
-  }).then( response => console.log(response.data))
-    .catch( error => console.log(error))
+// 	const userAuth = () => {
+//   Axios.get(`${process.env.REACT_APP_API_USER}/isAuthenticated`,{
+//     headers: {
+//       "Content-Type" : "application/json",
+//       "access-token": localStorage.getItem("jwt")
+//     }
+//   }).then( response => console.log(response.data))
+//     .catch( error => console.log(error))
 
-}
+// }
 
 
 export default EachUser
