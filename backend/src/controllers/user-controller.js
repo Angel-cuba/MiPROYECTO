@@ -57,11 +57,24 @@ userCtrl.getOneUser = async (req, res) => {
 }
 
 userCtrl.authorizationUser = async (req, res) => {
-     try {
-           res.json('Authentication request Ok')
-     } catch (error) {
-         console.log(error) 
-     }
+     // const userEmail = req.body.email[userEmail],
+
+     const checkEmail = req.userEmail
+ 
+    let sqlQuery = `SELECT * FROM users WHERE email = ?`
+    try {
+         await dbConnection.query(sqlQuery, [checkEmail], (err, result) => {
+               if (err) throw err 
+               res.status(200).json({"result": result, message: "Authentication OK"})})
+    } catch (error) {
+         console.log(error)
+    }
+          
+         
+          //  res.json('Authentication request Ok')
+     // } catch (error) {
+     //     console.log(error) 
+     // }
    
     
 }
