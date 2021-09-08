@@ -4,9 +4,9 @@ const path = require('path')
 
 const imageSchema = new Schema({
     // id: {type: String},
-    title : {type: String},
+    title : {type: String, trim: true},
     imageURL : {type: String},
-    description : {type: String},
+    description : {type: String, trim: true},
     public_id : {type: String},
     timestamp: {type: Date, default: Date.now()}
 
