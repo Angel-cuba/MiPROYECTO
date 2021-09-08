@@ -33,9 +33,11 @@ useEffect(() => {
 	const userAuth = () => {
   Axios.get(`${process.env.REACT_APP_API_USER}/isAuthenticated`,{
     headers: {
+      "Content-Type" : "application/json",
       "access-token": localStorage.getItem("jwt")
     }
-  }).then( response => console.log(response))
+  }).then( response => console.log(response.data))
+    .catch( error => console.log(error))
 
 }
 
