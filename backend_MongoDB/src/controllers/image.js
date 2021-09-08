@@ -17,10 +17,11 @@ cloudinary.config({
 ctrl.index = async (req, res) => {
 	const images = await Image.find();
 	if(images.length){
-		console.log('imagen id', images[0]._id);
-	}
-	
+		console.log(images);
 	res.status(200).send(images);
+	}else{
+		res.status(404).json({ "message": 'Not Found'})
+	}
 };
 ctrl.create = async (req, res) => {
 	const { title, description } = req.body;
