@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const auth = require('../routes/middleware/auth')
+const { verifyToken } = require('../routes/middleware/auth')
 
 const { newComment, getByIdComment, readComments,  updateComment, deleteComment} = require('../controllers/comment-controllers')
 
