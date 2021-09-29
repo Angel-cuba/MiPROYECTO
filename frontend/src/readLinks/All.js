@@ -22,7 +22,7 @@ export const All = () => {
      return (
           <>
                <div className="all">
-                    {cards ? cards: <article className="span"><p>Sorry, seems like you have some server problems</p> <SmallSpinner/> </article>}  
+                    {cards ? cards: <article className="span"><p>Sorry, seems like you have some ser ver problems</p> <SmallSpinner/> </article>}  
                     
                </div>
           </>

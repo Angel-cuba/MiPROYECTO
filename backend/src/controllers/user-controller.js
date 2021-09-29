@@ -65,18 +65,11 @@ userCtrl.authorizationUser = async (req, res) => {
     try {
          await dbConnection.query(sqlQuery, [checkEmail], (err, result) => {
                if (err) throw err 
-               res.status(200).json({"result": result, message: "Authentication OK"})})
+               res.status(200).json({"result": result, "id": result[0].id, message: "Authentication OK"})})
     } catch (error) {
          console.log(error)
     }
-          
-         
-          //  res.json('Authentication request Ok')
-     // } catch (error) {
-     //     console.log(error) 
-     // }
-   
-    
+
 }
 userCtrl.updateUser = (req, res) => {
      res.json('Update')

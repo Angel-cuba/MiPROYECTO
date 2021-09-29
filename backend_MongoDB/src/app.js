@@ -4,7 +4,8 @@ const path = require('path');
 const express = require('express');
 const errorhandler = require('errorhandler');
 const cors = require('cors');
-// const Upload  = require('./multer')
+// Port from keys.js file
+const { serverPORT }= require('./keytoserver/keys')
 
 const { time } = require('./helpers/libs');
 
@@ -22,7 +23,7 @@ for (let i = 0; i < 5; i++) {
 myEmitter.emit('event');
 
 module.exports = (app) => {
-	app.set('port', process.env.PORT || 3002);
+	app.set('port', serverPORT.PORT || "");
 
 	app.use(function (req, res, next) {
 		res.header({ 'Access-Control-Allow-Headers': '*' });

@@ -7,7 +7,7 @@ const { cloudinaryDB } = require('../keytoserver/keys');
 
 //Uso CLOUDINARY
 const cloudinary = require('cloudinary');
-const { mongo } = require('mongoose');
+
 cloudinary.config({
 	cloud_name: cloudinaryDB.CLOUD_NAME,
 	api_key: cloudinaryDB.API_KEY,
@@ -84,7 +84,7 @@ ctrl.comment = (req, res) => {
 ctrl.remove = async (req, res) => {
 	// const imageId = Image.findById(new mongo.ObjectID(req.params.id))
 	// console.log(imageId);
-	const { id } = req.params
+	const { id: _id } = req.params
 	const image = await Image.findOneAndDelete(id);
 	const result = await cloudinary.v2.uploader.destroy(image.public_id);
 	console.log(result);

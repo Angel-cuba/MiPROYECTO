@@ -15,4 +15,4 @@ router.get('/:id', getOneUser)
 router.put('/update/:id', updateUser)
 router.delete('/delete/:id', deleteUser)
 
-module.exports = router  
+module.exports = router      

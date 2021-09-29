@@ -40,5 +40,6 @@
   width: fit-content;
   margin: auto;
   background-color: transparent;
+  text-shadow: 2px 1px 3px rgba(0, 0, 0, 0.4), 5px 0 10px rgba(0, 0, 0, 0.4), 15px 0 10px rgba(0, 0, 0, 0.4);
 }
 /*# sourceMappingURL=eachUser.css.map */
