@@ -1,31 +1,30 @@
 const jwt = require('jsonwebtoken')
 
-
+const userVerify = {};
 // Authorization
-module.exports = (req, res, next) => {
- const token = req.headers["x-access-token"];
+userVerify.verifyToken = (req, res, next) => {
 
-    if (!token) {
-              return res.status(403).send({
-                   message: "no token provided"
-              })     
-
-    }
-     // //    const token = authHeader.split(' ')[1];
-// console.log(authHeader)
- console.log(token)
-        jwt.verify(token, process.env.TOKEN_SECRET , (err, decoded) => {
-            if (err) {
-                return res.status(401).send({
-                     message: "Unauthorized"
-                });
-            }
-
-            req.userId = decoded.id;
-            next();
-        });
-    
-
-
-
+    const strUser = req.headers["access-token"]
+//     console.log(req.headers)
+    console.log('---ACCESS-TOKEN-FROM-USER--------',strUser)
+  //   const Token  = req.data.token
+ const Token = strUser.replace(/^"(.*)"$/, '$1');
+  console.log("token",Token)
+    if(!Token){ 
+          res.send('Ooops request was refused')
+     } 
+  try {  
+          const decoded = jwt.verify(Token, process.env.TOKEN_SECRET)
+          req.userEmail = decoded.email
+          console.log(decoded)
+          console.log(req.userEmail)
+       next();   
+  } 
+  catch (error) {
+      console.log(error);
+          }
+  
 };
+
+
+module.exports = userVerify;

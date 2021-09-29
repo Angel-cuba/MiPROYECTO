@@ -1,5 +1,6 @@
 import "../components/pages/css/blog.css"
 import { Images } from "./Images";
+import { ImgSpinner } from '../Small-Components/Spinners/ImgSpinner'
 
 export const AllImages = ({dataImages, search}) => {
   const FilterImages = dataImages.filter((image) => image.title.toLowerCase().includes(search.toLowerCase()))
@@ -19,7 +20,8 @@ return (
          (
                <div className="nothing-to-show">
                     <div className="content">
-                         <h1>Sorry, <br/> there is nothing to show<br/>😫</h1>
+                         <ImgSpinner/>
+                         {/* <h1>Sorry, <br/> there is nothing to show<br/>😫</h1> */}
                     </div>
                 </div>
           )

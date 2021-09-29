@@ -62,6 +62,7 @@ const Login = () => {
 					toastWarning()
 				}
 				if (response.data.token) {
+					console.log(response)
 					const name = (response.data.userDB[0].first_name).toUpperCase()
 					const toastFx = () => {
 						toast.success('Hello ' + name + ' is good to see ya..!');
@@ -98,7 +99,7 @@ const Login = () => {
 					return null
 					}else{
 						const R = () => {
-							toast.error( error.response.data)
+							toast.error( error.response.data.message)
 						}
 						R();
 					}

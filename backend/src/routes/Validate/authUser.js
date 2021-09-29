@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const dbConnection = require("../../database/db");
-const commentCtrl = {}
+const userCtrl = {}
+const userVerify = {}
 
 
 const bcrypt = require('bcrypt');
@@ -26,26 +27,29 @@ router.post("/login", async (req, res) => {
         const didPasswordMatch = bcrypt.compareSync(plainTextPasswordFromBody, encryptedPasswordFromDB); // Aquí he cambiado el == por bcrypt.compare()
  
         if (!didPasswordMatch) { 
-        res.status(403).send("Wrong password, plzz check it again!!")
+        res.status(403).send({message: "Wrong password, plzz check it again!!"})
         }
            else{
                   const token = jwt.sign(
                                         {email: req.body.email},process.env.TOKEN_SECRET,{ expiresIn: "24h" }
                                                   );
-           res.header("auth-token", token).json({
+                                                  //.header("auth-token", token)
+           res.json({
+              auth: true,
               userDB: results,
               token
               });
           }
        }   
           else {
-            res.status(403).send("Email not found and be carefull with password!!")
+            res.status(403).send({message:"Email not found and be carefull with password!!"})
           } 
     }
   });
 });
+
   
-//Check to make sure header is not undefined, if so, return Forbidden (403)
+// //Check to make sure header is not undefined, if so, return Forbidden (403)
 // const checkToken = (req, res, next) => {
 //     const header = req.headers['authorization'];
 
@@ -63,7 +67,7 @@ router.post("/login", async (req, res) => {
 // //Buscando datos del user mediante el TOKEN
 // router.get('/data',  checkToken ,(req, res) => {
 //                 // res.json({user: 'user'})
- 
+  
 //   //verify the JWT token generated for the user
 //         jwt.verify(req.data.token, process.env.TOKEN_SECRET, (err, authorizedData) => {
 //             if(err){

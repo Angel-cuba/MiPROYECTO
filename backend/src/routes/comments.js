@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const auth = require('../routes/middleware/auth')
+const { verifyToken } = require('./middleware/auth')
 
 const { newComment, getByIdComment, readComments,  updateComment, deleteComment} = require('../controllers/comment-controllers')
 
@@ -11,4 +11,4 @@ router.get('/getOne/:id', getByIdComment )
 router.put('/update/:id', updateComment)
 router.delete('/delete/:id', deleteComment)
 
- module.exports = router
+ module.exports = router        

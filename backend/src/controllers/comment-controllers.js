@@ -27,24 +27,43 @@ commentCtrl.getByIdComment = async (req, res) => {
 
 commentCtrl.newComment= async (req, res) => {
      const { title, url, description} = req.body
-
-     const newComment = {
-          title,
-          url,
-          description,
-          // user_id: req.user.id 
-          
-     }  
+    
+ try { 
+     //  const checkEmail = req.userEmail
+     //   let sqlQueryFromUser = `SELECT * FROM users WHERE email = ?`
+     //      await dbConnection.query(sqlQueryFromUser, [checkEmail], (err, result) => {
+     //           if (err) throw err 
+     //           // res.json({"result": result})
+     //          if(result){
+     //               const userId = result[0].id
+     //               console.log(userId)  }
+                  
+                      const newComment = {
+                              title,
+                              url,
+                              description,
+                              // user_id: userId
+                                                          }  
 
        // Constant to save time 
   const created_at = Date(Date.now());
 
      let sqlQuery =`INSERT INTO links SET ?`
 
-   await dbConnection.query(sqlQuery, [newComment, created_at], (err, result) => {
-          if (err) throw err
-          res.status(200).json(result)
-     })
+          // async() => { 
+               await dbConnection.query(sqlQuery, [newComment, created_at], (err, result) => {
+                    if (err) throw err
+                    res.status(200).json(result)
+               })
+               // }
+            
+       
+     //    })
+ } catch (error) {
+      console.log(error)
+ }
+ 
+   
 }
 
  

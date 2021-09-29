@@ -2,10 +2,11 @@ const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
 const errorhandler = require('errorhandler')
-
+//Routes to validate new users
+const authUser = require('./routes/Validate/authUser')
 
 //middleware
-const auth = require('./routes/middleware/auth')
+// const { verifyToken } = require('./routes/middleware/auth')
 
 
 //Start
@@ -36,8 +37,7 @@ app.use( express.json());
 app.use( express.urlencoded( { extended: false } ) );
 
  
-//Routes to validate new users
-const authUser = require('./routes/Validate/authUser')
+
 
 //Routes of Login and Register 
 app.use('/api/user', authUser)

@@ -22,7 +22,7 @@ dbConnection.getConnection((error) => {
         }
         throw error;
     } else {
-        console.log('Database is already connected---->', dbConnection.config.acquireTimeout);
+        console.log('Database is already connected...😁!');
      //    console.log('Database connected',dbConnection);
 
     }

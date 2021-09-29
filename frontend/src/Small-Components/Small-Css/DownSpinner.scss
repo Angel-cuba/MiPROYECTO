@@ -1,0 +1,164 @@
+.Spinner {
+	background-color: transparent;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column-reverse;
+	text-align: center;
+	h1 {
+		width: fit-content;
+		font-family: 'Architects Daughter', cursive;
+		position: relative;
+		font-size: 10vw;
+		padding-left: 0.3rem;
+		padding-right: 0.5rem;
+		padding-bottom: 0.5rem;
+		// font-weight: bold;
+		color: rgba(15, 191, 245, 0.464);
+		-webkit-text-stroke: 0.33vw rgba(62, 74, 182, 0.34964);
+		background-color: transparent;
+		// text-transform:  uppercase;
+		&::before {
+			content: attr(data-text);
+			background-color: transparent;
+			padding-left: 0.3rem;
+			padding-right: 0.5rem;
+			padding-bottom: 0.5rem;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			color: rgba(2, 20, 70, 0.788);
+			-webkit-text-stroke: 0vw rgba(62, 74, 182, 0.964);
+			border-right: 1px dashed rgba(2, 20, 70, 0.10788);
+			// border-right: 10px solid rgba(2, 20, 70, 0.788);
+			overflow: hidden;
+			animation: animate 3s linear infinite;
+		}
+	}
+
+	.imgspinner {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 4px solid rgba(0, 0, 0, 0.14);
+		width: 110px;
+		height: 110px;
+		background-color: transparent;
+		border-radius: 50%;
+		border-left-color: transparent;
+		animation: spin 1.6s linear infinite;
+
+		.inside {
+			width: 30%;
+			height: 30%;
+			border: 0.12px solid black;
+			background-color: transparent;
+			border-radius: 50%;
+			border-left-color: transparent;
+			border-right-color: transparent;
+			margin: auto;
+			animation: rull 0.72s linear infinite;
+		}
+	}
+}
+
+@keyframes animate {
+	0%,
+	10%,
+	100% {
+		width: 0%;
+	}
+	70%,
+	90% {
+		width: 100%;
+	}
+}
+
+@keyframes rull {
+	0% {
+		transform: rotate(360deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(359deg);
+	}
+}
+@keyframes texto {
+	0% {
+		display: block;
+		background-color: #537895;
+		background-image: linear-gradient(305deg, #537895 0%, #09203f 64%);
+	}
+	10% {
+		display: none;
+		background-color: #537895;
+		background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+	}
+	20% {
+		display: block;
+		background-color: #537895;
+		background-image: linear-gradient(320deg, #537895 10%, #09203f 84%);
+	}
+	25% {
+		display: none;
+		background-color: #537895;
+		background-image: linear-gradient(325deg, #537895 20%, #09203f 94%);
+	}
+	30% {
+		display: block;
+		background-color: #537895;
+		background-image: linear-gradient(330deg, #537895 30%, #061933 4%);
+	}
+	40% {
+		display: none;
+		background-color: #537895;
+		background-image: linear-gradient(335deg, #537895 40%, #061933 14%);
+	}
+	50% {
+		display: block;
+		background-color: #537895;
+		background-image: linear-gradient(340deg, #537895 50%, #061933 24%);
+	}
+	60% {
+		display: none;
+		background-color: #537895;
+		background-image: linear-gradient(345deg, #537895 60%, #061933 34%);
+	}
+	70% {
+		display: block;
+		background-color: #537895;
+		background-image: linear-gradient(350deg, #537895 70%, #061933 44%);
+	}
+	75% {
+		display: none;
+		background-color: #537895;
+		background-image: linear-gradient(355deg, #537895 80%, #061933 54%);
+	}
+	80% {
+		display: block;
+		background-color: #537895;
+		background-image: linear-gradient(365deg, #537895 90%, #061933 64%);
+	}
+	90% {
+		// display: none;
+		background-color: #537895;
+		background-image: linear-gradient(385deg, #537895 100%, #061933 74%);
+	}
+	100% {
+		// display: blockine tuto
+		background-color: #537895;
+		background-image: linear-gradient(398deg, #537895 105%, #061933 94%);
+	}
+}

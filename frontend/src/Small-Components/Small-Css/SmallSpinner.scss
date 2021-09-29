@@ -1,0 +1,39 @@
+@import "../../components/pages/pagesCss/VariableScss/variables.scss";
+.spinn{
+     width: 40px;
+     height: 40px;
+     background-color: transparent;
+     border-radius: 50%;
+     border: 6px solid rgba(255,250,255,.1);
+     border-left-color: $clr-olive-4;
+     animation: small-spinner 1s linear infinite;
+     margin-left: .58rem;
+     margin-right: .58rem;
+     .round{
+          width: 100%;
+          background-color: transparent;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          animation: round-inside .1s linear infinite;
+          font-size: 13px;
+          color: $clr-olive;
+     }
+}
+
+@keyframes small-spinner {
+     0%{
+          transform: rotate(0deg);
+     }
+     100%{
+          transform: rotate(360deg);
+     }
+}
+@keyframes round-inside {
+     0%{
+          transform: rotate(360deg);
+     }
+     100%{
+          transform: rotate(0deg);
+     }
+}

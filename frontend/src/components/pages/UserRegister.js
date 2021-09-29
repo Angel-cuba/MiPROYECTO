@@ -9,12 +9,6 @@ import { formikRegister } from '../../lib/FormikRegister'
 
 
 const UserRegister = () => {
-// const btn = document.getElementById('btn')
-// if(!formikSubmit){
-//      btn.disabled = true
-// }
-
-     // btn.disabled = false
  
  return (
       <>
